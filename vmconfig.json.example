@@ -1,0 +1,22 @@
+{
+	"vms": [
+ 		{
+			"vmName": "<vm name>",
+			"ip": "<vm ip to communicate to>",
+			"flakeName": "<the name of the flake for the machine>",
+			"username": "user",
+			"sshKeys": [
+				{
+					"keyName": "name1",
+					"localPath": "local_path",
+					"remotePath": "remote_path"
+				},
+				{
+					"keyName": "name2",
+					"localPath": "local_path",
+					"remotePath": "remote_path"
+				}
+			]
+		}
+	]
+}

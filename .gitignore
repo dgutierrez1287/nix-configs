@@ -1,1 +1,3 @@
 /dotfiles
+vmconfig.json
+hardware/**.nix

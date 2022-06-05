@@ -1,0 +1,91 @@
+{
+	"variables": {
+		"disk_size": "10240",
+		"memory": "1024"
+	},
+	"builders": [
+	{
+      "boot_wait": "90s",
+      "boot_command": [
+        "echo http://{{ .HTTPIP }}:{{ .HTTPPort}} > .packer_http<enter>",
+        "mkdir -m 0700 .ssh<enter>",
+        "curl http://{{ .HTTPIP }}:{{ .HTTPPort}}/vagrant_keys/id_rsa.pub > .ssh/authorized_keys<enter>",
+        "sudo systemctl start sshd<enter>"
+      ],
+      "http_directory": "scripts",
+      "shutdown_command": "sudo shutdown -h now",
+      "ssh_private_key_file": "./scripts/vagrant_keys/id_rsa",
+      "ssh_port": 22,
+      "ssh_username": "nixos",
+      "headless": true,
+      "type": "virtualbox-iso",
+      "iso_url": "https://channels.nixos.org/nixos-21.11/latest-nixos-minimal-x86_64-linux.iso",
+      "iso_checksum": "68777e8bdb9d7543019453121bb59e419c18b6d14b64968665d34ec4134c4d92",
+      "guest_additions_mode": "disable",
+      "format": "ova",
+      "guest_os_type": "Linux_64",
+      "disk_size": "{{ user `disk_size` }}",
+       "vboxmanage": [
+        	[
+          		"modifyvm",
+          		"{{.Name}}",
+          		"--memory",
+          		"{{ user `memory` }}",
+          		"--vram",
+          		"128",
+          		"--clipboard",
+          		"bidirectional"
+       		]
+      	]
+    	},
+		{
+			"type": "hyperv-iso",
+			"switch_name": "Default Switch",
+			"memory": "{{ user `memory` }}",
+			"disk_size": "{{ user `disk_size` }}",
+			"generation": 1,
+			"http_directory": "scripts",
+			"ssh_port": 22,
+			"ssh_username": "nixos",
+			"headless": true,
+			"shutdown_command": "sudo shutdown -h now",
+			"enable_secure_boot": false,
+			"differencing_disk": true,
+			"communicator": "ssh",
+			"ssh_timeout": "1h",
+			"ssh_private_key_file": "./scripts/vagrant_keys/id_rsa",
+			"iso_url": "https://channels.nixos.org/nixos-21.11/latest-nixos-minimal-x86_64-linux.iso",
+			"iso_checksum": "68777e8bdb9d7543019453121bb59e419c18b6d14b64968665d34ec4134c4d92",
+			"boot_wait": "60s",
+			"boot_command": [
+				"echo http://{{ .HTTPIP }}:{{ .HTTPPort}} > .packer_http<enter>",
+        		"mkdir -m 0700 .ssh<enter>",
+        		"curl http://{{ .HTTPIP }}:{{ .HTTPPort}}/vagrant_keys/id_rsa.pub > .ssh/authorized_keys<enter>",
+        		"sudo su --<enter>",
+        		"nix-env -iA nixos.linuxPackages.hyperv-daemons<enter><wait10>",
+        		"$(find /nix/store -executable -iname 'hv_kvp_daemon' | head -n 1)<enter><wait10>",
+        		"systemctl start sshd<enter>"
+			]
+		}
+	],
+	"provisioners": [
+		{
+			"execute_command": "sudo su -c '{{ .Vars }}' '{{ .Path }}'",
+			"type": "shell",
+			"script": "./scripts/install.sh"
+		}
+	],
+	"post-processors": [
+		[
+			{
+				"type": "vagrant",
+				"keep_input_artifact": false,
+				"only": [
+					"hyperv-iso",
+					"virtualbox-iso"
+				],
+				"output": "nixos-21.11-{{ .Provider }}-x86_64.box"
+			}
+		]
+	]
+}

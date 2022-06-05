@@ -1,0 +1,11 @@
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# ssh agent
+echo "starting ssh-agent"
+eval `ssh-agent -s`
+
+echo "adding keys"
+ssh-add ~/.ssh/id_rsa > /dev/null
+
+echo "keys added:"
+ssh-add -l
