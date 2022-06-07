@@ -4,8 +4,8 @@ MAKEFILE_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 FLAKENAME ?= ""
 
 list-vars:
-	echo "${MAKEFILE_DIR}"
-	echo "${FLAKENAME}"
+	@echo "${MAKEFILE_DIR}"
+	@echo "${FLAKENAME}"
 
 prep-new:
 	sudo cp /etc/nixos/hardware-configuration.nix ./hardware/hardware-configuration.nix && \
