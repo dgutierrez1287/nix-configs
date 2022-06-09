@@ -9,6 +9,7 @@
 		./base_packages.nix
 		./tmux.nix
 		./zsh.nix
+		./bash.nix
 		./git.nix
 	] 
 	++ (if machineUse == "dev"
