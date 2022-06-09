@@ -10,7 +10,7 @@ list-vars:
 	@echo "nix user: ${NIXUSER}"
 
 prep-new:
-	sudo ./scripts/setup-local-mgmt.sh ${FLAKENAME} ${NIXUSER}
+	sudo sh ./scripts/setup-local-mgmt.sh ${FLAKENAME} ${NIXUSER}
 
 switch:
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nix-configs#${FLAKENAME}"

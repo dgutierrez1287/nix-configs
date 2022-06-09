@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Args
-flake_name=$2
-user_name=$3
+flake_name=$1
+user_name=$2
 
 sudo rm -rf /nix-configs
 
