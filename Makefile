@@ -10,10 +10,29 @@ list-vars:
 	@echo "nix user: ${NIXUSER}"
 
 prep-new:
-	sudo ./scripts/setup-local-mgmt.sh ${FLAKENAME} ${NIXUSER}
+	sudo rm -rf /nix-configs && \
+	sudo mkdir -p  /nix-configs/hardware && \
+	sudo cp /etc/nixos/hardware-configuration.nix /nix-configs/hardware/hardware-configuration.nix
+
+copy-nix:
+	sudo rsync -av \
+		--exclude='vendor/' \
+		--exclude='.git/' \
+		--exclude='.git-crypt/'\
+		--exclude='packer/' \
+		--exclude='scripts/' \
+		--exclude='shells/' \
+		--exclude='hardware/' \
+		--exclude='local-vm.sh' \
+		--exclude='vmconfig.json.example' \
+		--exclude='Makefile' \
+		--exclude='.gitignore'\
+		. /nix-configs/		
 
 switch:
+	copy-nix
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nix-configs#${FLAKENAME}"
 
 test:
+	copy-nix
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake "/nix-configs#$(FLAKENAME)"
