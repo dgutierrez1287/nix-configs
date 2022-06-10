@@ -32,6 +32,7 @@
 	environment.systemPackages = with pkgs; [
 		gnumake
 		killall
+		niv
 
 		# nix utils to get fetch settings for packages
 		nix-prefetch-github
