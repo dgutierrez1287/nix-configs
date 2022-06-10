@@ -29,8 +29,7 @@ copy-nix:
 		--exclude='.gitignore'\
 		. /nix-configs/		
 
-switch:
-	copy-nix
+switch: copy-nix
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nix-configs#${FLAKENAME}"
 
 test:
