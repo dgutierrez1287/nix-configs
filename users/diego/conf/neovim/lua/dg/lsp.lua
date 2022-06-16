@@ -1,6 +1,6 @@
 
-local sumneko_root_path = '/home/diego/utils/lsp/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+--local sumneko_root_path = '/home/diego/utils/lsp/lua-language-server'
+--local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
 local function on_attach()
 
@@ -55,7 +55,7 @@ require'lspconfig'.vimls.setup {
 -- install --> see vim-deps.sh
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+ --   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
         Lua = {
             runtime = {

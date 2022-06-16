@@ -7,6 +7,7 @@ in
 	# lua module files for custom configs
 	home.file.".config/nvim/lua/dg/lsp.lua".source = ./conf/neovim/lua/dg/lsp.lua;
 	home.file.".config/nvim/lua/dg/telescope.lua".source = ./conf/neovim/lua/dg/telescope.lua;
+    home.file.".config/nvim/lua/dg/nvim-tree.lua".source = ./conf/neovim/lua/dg/nvim-tree.lua;
 
 	programs.neovim = {
 		enable = true;
@@ -32,14 +33,15 @@ in
 		# configuration
 		extraConfig = builtins.concatStringsSep "\n" [
 			# vim configs
+            (lib.strings.fileContents ./conf/neovim/general.vim)
 			(lib.strings.fileContents ./conf/neovim/autopair.vim)
 			(lib.strings.fileContents ./conf/neovim/colors.vim)
 			(lib.strings.fileContents ./conf/neovim/commands.vim)
 			(lib.strings.fileContents ./conf/neovim/float-term.vim)
-			(lib.strings.fileContents ./conf/neovim/general.vim)
 			(lib.strings.fileContents ./conf/neovim/git.vim)
 			(lib.strings.fileContents ./conf/neovim/lsp.vim)
-			(lib.strings.fileContents ./conf/neovim/nerdtree.vim)
+            (lib.strings.fileContents ./conf/neovim/nvim-tree.vim)
+            (lib.strings.fileContents ./conf/neovim/glow.vim)
 			(lib.strings.fileContents ./conf/neovim/snippets.vim)
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
@@ -63,11 +65,14 @@ in
 
 			pkgs.tree-sitter
 		];
-		plugins = with pkgs.vimPlugins; [
+		plugins = with pkgs; [
 			# lsp
-			customPlugins.nvim-lspconfig
-			customPlugins.nvim-cmp
-			customPlugins.lsp_signature-nvim
+			customVim.nvim-lspconfig
+			customVim.nvim-cmp
+		    customVim.lsp_signature-nvim
+
+            # Markdown
+            customVim.glow-nvim
 
 			# snippets
 			customPlugins.ultisnips
@@ -75,13 +80,11 @@ in
 			customPlugins.vim-snippets
 
 			# terminal
-			customPlugins.vim-floaterm
+		    customPlugins.vim-floaterm
 
 			# file operations
-			customPlugins.nerdtree
-			customPlugins.nerdtree-git
-			customPlugins.vim-devicons
-			customPlugins.nerdtree-syntax-highlight
+            customVim.nvim-tree-lua
+            customVim.nvim-web-devicons
 
 			# look and feel
 			customPlugins.vim-colorschemes
@@ -110,7 +113,7 @@ in
 			customPlugins.plenary-nvim
 			customPlugins.telescope-nvim
 			customPlugins.telescope-fzy-native-nvim
-			nvim-treesitter
+			#nvim-treesitter
 		];
 	};	
 }

@@ -19,5 +19,6 @@
 
 	nixpkgs.overlays = [
 		(import ../../overlays/default.nix)
+        (import ./conf/neovim/plugins/sources.nix)
 	];
 }

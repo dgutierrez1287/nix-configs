@@ -4,39 +4,6 @@ let
 	buildVimPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix;
 in 
 {
-	"nvim-lspconfig" = buildVimPlugin {
-		pname = "nvim-lspconfg";
-		version = "v0.1.3";
-		src = pkgs.fetchFromGitHub {
-			owner = "neovim";
-    		repo = "nvim-lspconfig";
-    		rev = "99596a8cabb050c6eab2c049e9acde48f42aafa4";
-    		sha256 = "qU9D2bGRS6gDIxY8pgjwTVEwDTa8GXHUUQkXk9pBK/U=";
-		};
-	};
-
-	"nvim-cmp" = buildVimPlugin {
-		pname = "nvim-cmp";
-		version = "master";
-		src = pkgs.fetchFromGitHub {
-			owner = "hrsh7th";
-    		repo = "nvim-cmp";
-    		rev = "f81bfee10909e39c82ccd230f6f997438b16092e";
-    		sha256 = "Fr5ZrcbDQU/fLcV3qvhud4UzaUBm56Jh+HgWEPzsDCw=";
-		};
-	};
-
-	"lsp_signature-nvim" = buildVimPlugin {
-		pname = "lsp_signature-nvim";
-		version = "v0.1.1";
-		src = pkgs.fetchFromGitHub {
-			owner = "ray-x";
-    		repo = "lsp_signature.nvim";
-    		rev = "422006c33c0da8947772c3a1040fa6c93be418d8";
-    		sha256 = "BCjx2F3zdL0/Kwf4vxC/xIVE/XdnWGp2lX4gpn5a6QA=";
-		};
-	};
-
 	"ultisnips" = buildVimPlugin {
 		pname = "ultisnips";
 		version = "3.2";

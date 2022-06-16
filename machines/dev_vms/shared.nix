@@ -33,6 +33,9 @@
 		gnumake
 		killall
 		niv
+        xdg-utils
+        xdg-launch
+        w3m
 
 		# nix utils to get fetch settings for packages
 		nix-prefetch-github
