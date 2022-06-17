@@ -39,6 +39,7 @@ let sources = import ../../../../../nix/sources.nix; in rec {
         nvim-autopairs = vimUtils.buildVimPlugin {
             name = "nvim-autopairs";
             src = sources.nvim-autopairs;
+            buildPhase = ":";
         };
 
     };

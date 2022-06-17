@@ -74,6 +74,9 @@ in
             # Markdown
             customVim.glow-nvim
 
+            # Editior stuff
+            customVim.nvim-autopairs
+
 			# snippets
 			customPlugins.ultisnips
 			customPlugins.telescope-ultisnips-nvim
