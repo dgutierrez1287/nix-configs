@@ -7,7 +7,6 @@ in
 	# lua module files for custom configs
 	home.file.".config/nvim/lua/dg/lsp.lua".source = ./conf/neovim/lua/dg/lsp.lua;
 	home.file.".config/nvim/lua/dg/telescope.lua".source = ./conf/neovim/lua/dg/telescope.lua;
-    home.file.".config/nvim/lua/dg/nvim-tree.lua".source = ./conf/neovim/lua/dg/nvim-tree.lua;
 
 	programs.neovim = {
 		enable = true;
@@ -41,6 +40,7 @@ in
 			(lib.strings.fileContents ./conf/neovim/git.vim)
 			(lib.strings.fileContents ./conf/neovim/lsp.vim)
             (lib.strings.fileContents ./conf/neovim/nvim-tree.vim)
+            (lib.strings.fileContents ./conf/neovim/tree-sitter.vim)
             (lib.strings.fileContents ./conf/neovim/glow.vim)
 			(lib.strings.fileContents ./conf/neovim/snippets.vim)
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
@@ -53,23 +53,39 @@ in
 
 		# extra packages neovim needs
 		extraPackages = [
+            # typescript
 			pkgs.nodePackages.typescript
 			pkgs.nodePackages.typescript-language-server
 
+            # bash
 			pkgs.nodePackages.bash-language-server
+
+            #vim
       		pkgs.nodePackages.vim-language-server
 
+            # lua
 			pkgs.sumneko-lua-language-server			
 
+            # golang
 			pkgs.gopls
 
-			pkgs.tree-sitter
+            # nixos
+            pkgs.rnix-lsp
+
+            # python
+            pkgs.nodePackages.pyright
+
+            # terraform
+            pkgs.terraform-ls
 		];
 		plugins = with pkgs; [
 			# lsp
 			customVim.nvim-lspconfig
 			customVim.nvim-cmp
 		    customVim.lsp_signature-nvim
+
+            # tree-sitter 
+            customVim.nvim-treesitter
 
             # Markdown
             customVim.glow-nvim
@@ -96,6 +112,7 @@ in
 
 			# language stuff
 			customPlugins.vim-terraform
+            customVim.vim-nix
 
 			# motion
 			customPlugins.vim-tmux-navigator
@@ -116,7 +133,6 @@ in
 			customPlugins.plenary-nvim
 			customPlugins.telescope-nvim
 			customPlugins.telescope-fzy-native-nvim
-			#nvim-treesitter
 		];
 	};	
 }

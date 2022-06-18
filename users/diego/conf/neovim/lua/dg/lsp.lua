@@ -15,11 +15,9 @@ require 'lsp_signature'.setup({
 })
 
 -- typescript
--- install --> :LspInstall typescript
 require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 
 -- golang language
--- install --> :LspInstall go
 require'lspconfig'.gopls.setup{
     on_attach = on_attach,
     cmd = {"gopls", "serve"},
@@ -33,26 +31,27 @@ require'lspconfig'.gopls.setup{
     },
 }
 
+-- nix language
+require'lspconfig'.rnix.setup {
+    on_attach = on_attach
+}
+
 -- bash language
--- install --> :LspInstall bash
 require'lspconfig'.bashls.setup{
     on_attach = on_attach,
 }
 
 -- python language
--- install --> :LspInstall python
 require'lspconfig'.pyright.setup{
     on_attach = on_attach,
 }
 
 -- vim language
--- install --> :LspInstall vim
 require'lspconfig'.vimls.setup {
     on_attach = on_attach,
 }
 
 -- lua language
--- install --> see vim-deps.sh
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,
  --   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};

@@ -95,6 +95,18 @@
         "url": "https://github.com/kyazdani42/nvim-tree.lua/archive/1caca6285427ebd2b4f0eb10f4d1ae3956ff09c0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-treesitter": {
+        "branch": "master",
+        "description": "Nvim Treesitter configurations and abstraction layer",
+        "homepage": "",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter",
+        "rev": "22fdb251a2793bd3611e866cb42bfa2142c265c3",
+        "sha256": "1y5a9p8s7dy80chxnnnfsng9g39h78fmc6640aclibgqdfl7qkh6",
+        "type": "tarball",
+        "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/22fdb251a2793bd3611e866cb42bfa2142c265c3.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-web-devicons": {
         "branch": "master",
         "description": "lua `fork` of vim-web-devicons for neovim",
@@ -105,6 +117,102 @@
         "sha256": "0jb25z0bw2xyix18pf59lrmbnih8yxxkb81xi9zl034k9l9cmsv3",
         "type": "tarball",
         "url": "https://github.com/kyazdani42/nvim-web-devicons/archive/8d2c5337f0a2d0a17de8e751876eeb192b32310e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-bash": {
+        "branch": "master",
+        "description": "Bash grammar for tree-sitter",
+        "homepage": null,
+        "owner": "tree-sitter",
+        "repo": "tree-sitter-bash",
+        "rev": "275effdfc0edce774acf7d481f9ea195c6c403cd",
+        "sha256": "14ficjp82cdamylgx090z3rkr5b2q04i2w3854yavli9zf57lwpr",
+        "type": "tarball",
+        "url": "https://github.com/tree-sitter/tree-sitter-bash/archive/275effdfc0edce774acf7d481f9ea195c6c403cd.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-go": {
+        "branch": "master",
+        "description": "Go grammar for tree-sitter",
+        "homepage": null,
+        "owner": "tree-sitter",
+        "repo": "tree-sitter-go",
+        "rev": "aeb2f33b366fd78d5789ff104956ce23508b85db",
+        "sha256": "1008r5y8h2vpjjcx4cvi9qa02cmfaskc97y2zahjfrv3lm1gkqp7",
+        "type": "tarball",
+        "url": "https://github.com/tree-sitter/tree-sitter-go/archive/aeb2f33b366fd78d5789ff104956ce23508b85db.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-hcl": {
+        "branch": "main",
+        "description": "A tree-sitter grammar for HCL (HashiCorp Configuration Language), used by projects such as Terraform.",
+        "homepage": "",
+        "owner": "mitchellh",
+        "repo": "tree-sitter-hcl",
+        "rev": "bdc2ee0cbd19d22f8a1529e5c9d099029573c931",
+        "sha256": "059knii4piigq8sjfpc8a5cjz2x1g3md88j05h0yh26qzn0i4fci",
+        "type": "tarball",
+        "url": "https://github.com/mitchellh/tree-sitter-hcl/archive/bdc2ee0cbd19d22f8a1529e5c9d099029573c931.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-json": {
+        "branch": "master",
+        "description": "JSON grammar for tree-sitter",
+        "homepage": null,
+        "owner": "tree-sitter",
+        "repo": "tree-sitter-json",
+        "rev": "368736a6137770f785e1e7479a6be29417eb13aa",
+        "sha256": "06gvjpg5z8l9vm8a5di5ziv4z1wx3cah1ng14wa9f8r6zi9gn6an",
+        "type": "tarball",
+        "url": "https://github.com/tree-sitter/tree-sitter-json/archive/368736a6137770f785e1e7479a6be29417eb13aa.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-markdown": {
+        "branch": "main",
+        "description": "A markdown grammar for tree-sitter",
+        "homepage": "",
+        "owner": "MDeiml",
+        "repo": "tree-sitter-markdown",
+        "rev": "ab15701d8f3f68aeb74e30573b7d669a6ef2a7ed",
+        "sha256": "1j6gnlcq92cvn2931wsiqdanrgvdjn419kikl65wg1rikg1as78b",
+        "type": "tarball",
+        "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/ab15701d8f3f68aeb74e30573b7d669a6ef2a7ed.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-nix": {
+        "branch": "master",
+        "description": "Nix grammar for tree-sitter",
+        "homepage": null,
+        "owner": "cstrahan",
+        "repo": "tree-sitter-nix",
+        "rev": "6b71a810c0acd49b980c50fc79092561f7cee307",
+        "sha256": "1v1g49g1jg56nifjp3m3ak6ng3hpzkp51ywaq3rnpwgkij7i4f5r",
+        "type": "tarball",
+        "url": "https://github.com/cstrahan/tree-sitter-nix/archive/6b71a810c0acd49b980c50fc79092561f7cee307.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tree-sitter-python": {
+        "branch": "master",
+        "description": "Python grammar for tree-sitter",
+        "homepage": null,
+        "owner": "tree-sitter",
+        "repo": "tree-sitter-python",
+        "rev": "dafcef7943229ec9d530b36ed67d758e659f4c6c",
+        "sha256": "07dkwp46wp8fnh94qy4rlvn8yq0wzawnmbrz7z1jk14ymr6s5hkh",
+        "type": "tarball",
+        "url": "https://github.com/tree-sitter/tree-sitter-python/archive/dafcef7943229ec9d530b36ed67d758e659f4c6c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-nix": {
+        "branch": "master",
+        "description": "Vim configuration files for Nix http://nixos.org/nix",
+        "homepage": null,
+        "owner": "LnL7",
+        "repo": "vim-nix",
+        "rev": "7d23e97d13c40fcc6d603b291fe9b6e5f92516ee",
+        "sha256": "1vaprm79j0nfl37r6lw0zwd048ajd5sc9cvny59qwdl3x0zk38av",
+        "type": "tarball",
+        "url": "https://github.com/LnL7/vim-nix/archive/7d23e97d13c40fcc6d603b291fe9b6e5f92516ee.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

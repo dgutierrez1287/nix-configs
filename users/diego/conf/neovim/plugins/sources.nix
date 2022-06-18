@@ -42,5 +42,82 @@ let sources = import ../../../../../nix/sources.nix; in rec {
             buildPhase = ":";
         };
 
+        vim-nix = vimUtils.buildVimPlugin {
+            name = "vim-nix";
+            src = sources.vim-nix;
+            buildPhase = ":";
+        };
+        
+## treesitter and grammars ##
+        nvim-treesitter = vimUtils.buildVimPlugin {
+            name = "nvim-treesitter";
+            src = sources.nvim-treesitter;
+        };
+
+        tree-sitter-hcl = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            lanaguage = "hcl";
+            version = "0.1.0";
+            source = sources.tree-sitter-hcl;
+        };
+
+        tree-sitter-python = self.callPackage
+        (sources.nixpgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "python";
+            version = "0.1.0";
+            source = sources.tree-sitter-python;
+        };
+
+
+        tree-sitter-go = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "go";
+            version = "0.1.0";
+            source = sources.tree-sitter-go;
+        };
+
+
+        tree-sitter-bash = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "bash";
+            version = "0.1.0";
+            source = sources.tree-sitter-bash;
+        };
+
+
+        tree-sitter-json = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "json";
+            version = "0.1.0";
+            source = sources.tree-sitter-json;
+        };
+
+
+        tree-sitter-markdown = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "markdown";
+            version = "0.1.0";
+            source = sources.tree-sitter-markdown;
+        };
+
+
+        tree-sitter-nix = self.callPackage
+        (sources.nixpkgs + /pkgs/development/tools/parsing/tree-sitter/grammar.nix) { } {
+            language = "nix";
+            version = "0.1.0";
+            source = sources.tree-sitter-nix;
+        };
+
+
+        #tree-sitter-lua
+
+
+        #tree-sitter-sql
+
+
+        #tree-sitter-yaml
+
+
+#############################
     };
 }
