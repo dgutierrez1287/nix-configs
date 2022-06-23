@@ -41,13 +41,14 @@ in
 			(lib.strings.fileContents ./conf/neovim/lsp.vim)
             (lib.strings.fileContents ./conf/neovim/nvim-tree.vim)
             (lib.strings.fileContents ./conf/neovim/tree-sitter.vim)
+            (lib.strings.fileContents ./conf/neovim/nvim-cmp.vim)
             (lib.strings.fileContents ./conf/neovim/glow.vim)
 			(lib.strings.fileContents ./conf/neovim/snippets.vim)
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
 			(lib.strings.fileContents ./conf/neovim/vim-airline.vim)
-			(lib.strings.fileContents ./conf/neovim/vim-commentary.vim)
+			(lib.strings.fileContents ./conf/neovim/comment-nvim.vim)
 			(lib.strings.fileContents ./conf/neovim/vim-terraform.vim)
 		];
 
@@ -126,7 +127,7 @@ in
 			customPlugins.git-worktree-nvim
 
 			# comments
-			customPlugins.vim-commentary
+            customVim.comment-nvim
 
 			# telescope and requirements
 			customPlugins.popup-nvim

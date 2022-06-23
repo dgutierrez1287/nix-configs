@@ -9,19 +9,21 @@
 		plugins = with pkgs; [
 			tmuxPlugins.resurrect
 			tmuxPlugins.continuum
+            tmuxPlugins.vim-tmux-navigator
 			tmuxPlugins.yank
 		];		
 		extraConfig = ''
-			# Force reload of config file
-			unbind r
-			bind-key r run-shell '\
-				tmux source-file /etc/tmux.conf > /dev/null; \
-				tmux display-message "sourced /etc/tmux.conf"'
-
 			# toggle synchronized-panes
 			bind C-x setw synchronize-panes
 			setw -g window-status-current-format '#{?pane_synchronized,#[bg=red],}#I:#W:#F'
 			setw -g window-status-format '#{?pane_synchronized,#[bg=red],}#I:#W:#F'
+
+            # Use vi keybindings in copy and choice modes
+            setw -g mode-keys vi
+
+            # Use vi keybindings for tmux commandline input.
+            # Note that to get command mode you need to hit ESC twice...
+            set -g status-keys vi
 
 			# set new panes to open in current directory
 			bind '"' split-window -c "#{pane_current_path}"

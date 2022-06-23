@@ -2,18 +2,17 @@
 
 "  ######## autopair.vim ###########
 
-"inoremap \" \""<left>
-"cinoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-""inoremap < <><left>
-""inoremap {<CR> {<CR>}<ESC>O
-""inoremap {;<CR> {<CR>};<ESC>O
-""inoremap [<CR> [<CR>]<ESC>O
-
 lua <<EOF
-require'nvim-autopairs'.setup {
-    disable_filetype = { "TelescopePrompt", "vim" },
+local Rule = require('nvim-autopairs.rule')
+local npairs = require('nvim-autopairs')
+
+npairs.setup {
+    disable_filetype = { "TelescopePrompt" },
 }
+
+npairs.add_rules({
+    Rule('"', '"', "-vim"),
+})
 EOF
+
+

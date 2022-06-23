@@ -33,5 +33,8 @@
 
 		# database stuff
 		fsql
+
+        # terminal web browser
+        lynx
 	];
 }
