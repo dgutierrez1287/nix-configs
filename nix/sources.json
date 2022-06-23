@@ -131,6 +131,18 @@
         "url": "https://github.com/hrsh7th/nvim-cmp/archive/15c7bf7c0dfb7c75eb526c53f9574633c13dc22d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-jqx": {
+        "branch": "master",
+        "description": "Populate the quickfix with json entries",
+        "homepage": "",
+        "owner": "gennaro-tedesco",
+        "repo": "nvim-jqx",
+        "rev": "26bf7cc5e1942dac9f825dff90e180620c264fe7",
+        "sha256": "0r45lda81khhkkqk6nrdqw6y3hdzc0w5jirz1yn1n51b7vxjm1dy",
+        "type": "tarball",
+        "url": "https://github.com/gennaro-tedesco/nvim-jqx/archive/26bf7cc5e1942dac9f825dff90e180620c264fe7.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-lspconfig": {
         "branch": "master",
         "description": "Quickstart configs for Nvim LSP",

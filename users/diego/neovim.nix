@@ -85,6 +85,9 @@ in
 			customVim.nvim-cmp
 		    customVim.lsp_signature-nvim
 
+            # json
+            customVim.nvim-jqx
+
             # tree-sitter 
             customVim.nvim-treesitter
 

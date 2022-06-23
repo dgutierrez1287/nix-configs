@@ -77,6 +77,12 @@ let sources = import ../../../../../nix/sources.nix; in rec {
       src = sources.comment-nvim;
       buildPhase = ":";
     };
+
+    nvim-jqx = vimUtils.buildVimPlugin {
+      name = "nvim-jqx";
+      src = sources.nvim-jqx;
+      buildPhase = ":";
+    };
         
     ## treesitter and grammars ##
     nvim-treesitter = vimUtils.buildVimPlugin {
