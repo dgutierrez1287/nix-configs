@@ -34,7 +34,6 @@ in
 			# vim configs
             (lib.strings.fileContents ./conf/neovim/general.vim)
 			(lib.strings.fileContents ./conf/neovim/autopair.vim)
-			(lib.strings.fileContents ./conf/neovim/colors.vim)
 			(lib.strings.fileContents ./conf/neovim/commands.vim)
 			(lib.strings.fileContents ./conf/neovim/float-term.vim)
 			(lib.strings.fileContents ./conf/neovim/git.vim)
@@ -47,7 +46,8 @@ in
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
-			(lib.strings.fileContents ./conf/neovim/vim-airline.vim)
+			(lib.strings.fileContents ./conf/neovim/lualine.vim)
+            (lib.strings.fileContents ./conf/neovim/colors.vim)
 			(lib.strings.fileContents ./conf/neovim/comment-nvim.vim)
 			(lib.strings.fileContents ./conf/neovim/vim-terraform.vim)
 		];
@@ -103,16 +103,16 @@ in
 			customPlugins.vim-snippets
 
 			# terminal
-		    customPlugins.vim-floaterm
+		    customVim.vim-floaterm
 
 			# file operations
             customVim.nvim-tree-lua
             customVim.nvim-web-devicons
 
 			# look and feel
-			customPlugins.vim-colorschemes
-			customPlugins.vim-airline
-			customPlugins.vim-airline-themes
+            customVim.zephyr-nvim
+            customVim.material-nvim
+            customVim.lualine-nvim
 
 			# language stuff
 			customPlugins.vim-terraform

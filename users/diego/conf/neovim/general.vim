@@ -49,7 +49,7 @@ nnoremap <C-s> :vnew<CR>
 nnoremap <C-i> :new<CR>
 
 " set column
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=brown
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=0 guibg=yellow
 
 nnoremap <leader>sv :source $MYVIMRC<CR>

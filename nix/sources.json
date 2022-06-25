@@ -83,6 +83,30 @@
         "url": "https://github.com/ray-x/lsp_signature.nvim/archive/9ccee20602a10843e3ea3ebc2536dfdcc6cee9a3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "lualine-nvim": {
+        "branch": "master",
+        "description": "A blazing fast and easy to configure neovim statusline plugin written in pure lua.",
+        "homepage": "",
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "rev": "5113cdb32f9d9588a2b56de6d1df6e33b06a554a",
+        "sha256": "07npk6x4ljq7f3wfcs3liaxpn23x4gdxr5jq8vglhd1xj3l99mh5",
+        "type": "tarball",
+        "url": "https://github.com/nvim-lualine/lualine.nvim/archive/5113cdb32f9d9588a2b56de6d1df6e33b06a554a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "material-nvim": {
+        "branch": "main",
+        "description": ":trident: Material colorscheme for NeoVim written in Lua with built-in support for native LSP, TreeSitter and many more plugins",
+        "homepage": "",
+        "owner": "marko-cerovac",
+        "repo": "material.nvim",
+        "rev": "33d764439816ad80ded0f60b4bd8c038c9f96f43",
+        "sha256": "154hhvh44408m8n7vy9js7xakqv62qh0m8ffnvb65w63k1fjmwhs",
+        "type": "tarball",
+        "url": "https://github.com/marko-cerovac/material.nvim/archive/33d764439816ad80ded0f60b4bd8c038c9f96f43.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
@@ -311,6 +335,18 @@
         "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/0e36bed171768908f331ff7dff9d956bae016efb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "vim-floaterm": {
+        "branch": "master",
+        "description": ":star2: Terminal manager for (neo)vim",
+        "homepage": "",
+        "owner": "voldikss",
+        "repo": "vim-floaterm",
+        "rev": "e3f2d94d722603f8b65088ea1d7e0329951985bd",
+        "sha256": "0d7r5g1wrcbq6ahd3hbwpjw54qk8k471wm704cmpdlgfjbjxdfqf",
+        "type": "tarball",
+        "url": "https://github.com/voldikss/vim-floaterm/archive/e3f2d94d722603f8b65088ea1d7e0329951985bd.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "vim-nix": {
         "branch": "master",
         "description": "Vim configuration files for Nix http://nixos.org/nix",
@@ -321,6 +357,18 @@
         "sha256": "1vaprm79j0nfl37r6lw0zwd048ajd5sc9cvny59qwdl3x0zk38av",
         "type": "tarball",
         "url": "https://github.com/LnL7/vim-nix/archive/7d23e97d13c40fcc6d603b291fe9b6e5f92516ee.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "zephyr-nvim": {
+        "branch": "main",
+        "description": "A dark neovim colorscheme written in lua",
+        "homepage": "",
+        "owner": "glepnir",
+        "repo": "zephyr-nvim",
+        "rev": "1eea36117a8ca4f3250c0223e78a690cdc720f9e",
+        "sha256": "1bizvz1h7dqjplf2fs3w6syn5g3a1n2j84caf6saidr36h6irrns",
+        "type": "tarball",
+        "url": "https://github.com/glepnir/zephyr-nvim/archive/1eea36117a8ca4f3250c0223e78a690cdc720f9e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

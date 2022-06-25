@@ -83,6 +83,33 @@ let sources = import ../../../../../nix/sources.nix; in rec {
       src = sources.nvim-jqx;
       buildPhase = ":";
     };
+
+    vim-floaterm = vimUtils.buildVimPlugin {
+      name = "vim-floaterm";
+      src = sources.vim-floaterm;
+      buildPhase = ":";
+    };
+
+    lualine-nvim = vimUtils.buildVimPlugin {
+      name = "lualine";
+      src = sources.lualine-nvim;
+      buildPhase = ":";
+    };
+
+    ## Color Schemes
+    zephyr-nvim = vimUtils.buildVimPlugin {
+      name = "zephyr-nvim";
+      src = sources.zephyr-nvim;
+      buildPhase = ":";
+    };
+
+    material-nvim = vimUtils.buildVimPlugin {
+        name = "material-nvim";
+        src = sources.material-nvim;
+        buildPhase = ":";
+    };
+    
+    ##
         
     ## treesitter and grammars ##
     nvim-treesitter = vimUtils.buildVimPlugin {
