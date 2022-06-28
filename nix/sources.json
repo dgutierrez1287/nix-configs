@@ -59,6 +59,18 @@
         "url": "https://github.com/numToStr/Comment.nvim/archive/2c26a00f32b190390b664e56e32fd5347613b9e2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "git-worktree-nvim": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "ThePrimeagen",
+        "repo": "git-worktree.nvim",
+        "rev": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458",
+        "sha256": "1k446mah5dlqddxwdm7l009251ly8l99ysamncs5q2wpvmv68hm6",
+        "type": "tarball",
+        "url": "https://github.com/ThePrimeagen/git-worktree.nvim/archive/d7f4e2584e81670154f07ca9fa5dd791d9c1b458.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "glow-nvim": {
         "branch": "main",
         "description": "A markdown preview directly in your neovim.",
@@ -215,6 +227,66 @@
         "url": "https://github.com/kyazdani42/nvim-web-devicons/archive/8d2c5337f0a2d0a17de8e751876eeb192b32310e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "plenary-nvim": {
+        "branch": "master",
+        "description": "plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.",
+        "homepage": null,
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "rev": "968a4b9afec0c633bc369662e78f8c5db0eba249",
+        "sha256": "05x9hnz960ljcb2psqycxgdmh99j36y16vbb9l92wjv5szkz37x5",
+        "type": "tarball",
+        "url": "https://github.com/nvim-lua/plenary.nvim/archive/968a4b9afec0c633bc369662e78f8c5db0eba249.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "popup-nvim": {
+        "branch": "master",
+        "description": "[WIP] An implementation of the Popup API from vim in Neovim. Hope to upstream when complete",
+        "homepage": null,
+        "owner": "nvim-lua",
+        "repo": "popup.nvim",
+        "rev": "b7404d35d5d3548a82149238289fa71f7f6de4ac",
+        "sha256": "093r3cy02gfp7sphrag59n3fjhns7xdsam1ngiwhwlig3bzv7mbl",
+        "type": "tarball",
+        "url": "https://github.com/nvim-lua/popup.nvim/archive/b7404d35d5d3548a82149238289fa71f7f6de4ac.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-fzf-native-nvim": {
+        "branch": "main",
+        "description": "FZF sorter for telescope written in c",
+        "homepage": "",
+        "owner": "nvim-telescope",
+        "repo": "telescope-fzf-native.nvim",
+        "rev": "6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6",
+        "sha256": "1ssznk16fhnqsp2kwff48ccbrgw2cbaxjhbj6wzap9cbw78kxpf9",
+        "type": "tarball",
+        "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-nvim": {
+        "branch": "master",
+        "description": "Find, Filter, Preview, Pick. All lua, all the time.",
+        "homepage": "",
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "rev": "d88b44ddf14670cffa9fdb1eaca7a0429a973653",
+        "sha256": "11ahi16nd21p9413d3rdw25bgzjkp3k83p6a1jwka3pk15c87nl0",
+        "type": "tarball",
+        "url": "https://github.com/nvim-telescope/telescope.nvim/archive/d88b44ddf14670cffa9fdb1eaca7a0429a973653.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "telescope-ultisnips-nvim": {
+        "branch": "main",
+        "description": null,
+        "homepage": null,
+        "owner": "fhill2",
+        "repo": "telescope-ultisnips.nvim",
+        "rev": "f48b6d4f53b31507d3fd514905c6940409e8ada8",
+        "sha256": "0333k3m0fygc4r7w56csf0h282gf2wqrykl52n6310i9vardyqw7",
+        "type": "tarball",
+        "url": "https://github.com/fhill2/telescope-ultisnips.nvim/archive/f48b6d4f53b31507d3fd514905c6940409e8ada8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tree-sitter-bash": {
         "branch": "master",
         "description": "Bash grammar for tree-sitter",
@@ -335,6 +407,30 @@
         "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/0e36bed171768908f331ff7dff9d956bae016efb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "ultisnips": {
+        "branch": "master",
+        "description": "UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!",
+        "homepage": "",
+        "owner": "SirVer",
+        "repo": "ultisnips",
+        "rev": "5fc4862eea9bc72cf0f03c56a4a09fd76d9fee35",
+        "sha256": "04hy5v2brixsg5b3pl3d1m1ihwh5yj98zi3zm1zrj4r4kafnm08x",
+        "type": "tarball",
+        "url": "https://github.com/SirVer/ultisnips/archive/5fc4862eea9bc72cf0f03c56a4a09fd76d9fee35.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "undotree": {
+        "branch": "master",
+        "description": "The undo history visualizer for VIM",
+        "homepage": "http://www.vim.org/scripts/script.php?script_id=4177",
+        "owner": "mbbill",
+        "repo": "undotree",
+        "rev": "08e259be24d4476c1ee745dc735eefd44f90efdc",
+        "sha256": "154k5wrs0lhx8dj2pqkhfgqk11csa1iw1dshn7n07iq0ab2wkimy",
+        "type": "tarball",
+        "url": "https://github.com/mbbill/undotree/archive/08e259be24d4476c1ee745dc735eefd44f90efdc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "vim-floaterm": {
         "branch": "master",
         "description": ":star2: Terminal manager for (neo)vim",
@@ -347,6 +443,30 @@
         "url": "https://github.com/voldikss/vim-floaterm/archive/e3f2d94d722603f8b65088ea1d7e0329951985bd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "vim-fugitive": {
+        "branch": "master",
+        "description": "fugitive.vim: A Git wrapper so awesome, it should be illegal",
+        "homepage": "https://www.vim.org/scripts/script.php?script_id=2975",
+        "owner": "tpope",
+        "repo": "vim-fugitive",
+        "rev": "ecc5e8fa406153c7de6fb4ef90afe7718e056e6a",
+        "sha256": "0j4zb7mxf4iqk544gqdyf3mjw2bmmih7v2x308qfjsxfsypz5639",
+        "type": "tarball",
+        "url": "https://github.com/tpope/vim-fugitive/archive/ecc5e8fa406153c7de6fb4ef90afe7718e056e6a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-gitgutter": {
+        "branch": "master",
+        "description": "A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.",
+        "homepage": "",
+        "owner": "airblade",
+        "repo": "vim-gitgutter",
+        "rev": "ded11946c04aeab5526f869174044019ae9e3c32",
+        "sha256": "144c2ws85wjh335h80alg4k4jghpvkb322p2m15q978i942mh5na",
+        "type": "tarball",
+        "url": "https://github.com/airblade/vim-gitgutter/archive/ded11946c04aeab5526f869174044019ae9e3c32.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "vim-nix": {
         "branch": "master",
         "description": "Vim configuration files for Nix http://nixos.org/nix",
@@ -357,6 +477,42 @@
         "sha256": "1vaprm79j0nfl37r6lw0zwd048ajd5sc9cvny59qwdl3x0zk38av",
         "type": "tarball",
         "url": "https://github.com/LnL7/vim-nix/archive/7d23e97d13c40fcc6d603b291fe9b6e5f92516ee.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-snippets": {
+        "branch": "master",
+        "description": "vim-snipmate default snippets (Previously snipmate-snippets)",
+        "homepage": "",
+        "owner": "honza",
+        "repo": "vim-snippets",
+        "rev": "222cf7b44bb569c9a046a9891000c898bd4c43c9",
+        "sha256": "0xksa854c8rjp9y2xvhk78z5ha9p8c3pvpzvddii2aay22cfkn8h",
+        "type": "tarball",
+        "url": "https://github.com/honza/vim-snippets/archive/222cf7b44bb569c9a046a9891000c898bd4c43c9.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-terraform": {
+        "branch": "master",
+        "description": "basic vim/terraform integration",
+        "homepage": "http://hashivim.github.io/vim-terraform",
+        "owner": "hashivim",
+        "repo": "vim-terraform",
+        "rev": "f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443",
+        "sha256": "0j87i6kxafwl8a8szy2gzv7d0qhzwynd93iw8k0i42jnpqm8rp3a",
+        "type": "tarball",
+        "url": "https://github.com/hashivim/vim-terraform/archive/f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-tmux-navigator": {
+        "branch": "master",
+        "description": "Seamless navigation between tmux panes and vim splits",
+        "homepage": null,
+        "owner": "christoomey",
+        "repo": "vim-tmux-navigator",
+        "rev": "9ca5bfe5bd274051b5dd796cc150348afc993b80",
+        "sha256": "11qv4bqwwf7wh3l729c9za6kzpyry91q3cks2z51znppkyd20gb7",
+        "type": "tarball",
+        "url": "https://github.com/christoomey/vim-tmux-navigator/archive/9ca5bfe5bd274051b5dd796cc150348afc993b80.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zephyr-nvim": {

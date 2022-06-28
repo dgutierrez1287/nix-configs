@@ -96,6 +96,88 @@ let sources = import ../../../../../nix/sources.nix; in rec {
       buildPhase = ":";
     };
 
+
+    ## Snippet
+    ultisnips = vimUtils.buildVimPlugin {
+      name = "ultisnips";
+      src = sources.ultisnips;
+      buildPhase = ":";
+    };
+
+    telescope-ultisnips-nvim = vimUtils.buildVimPlugin {
+      name = "telescope-ultisnips-nvim";
+      src = sources.telescope-ultisnips-nvim;
+      buildPhase = ":";
+    };
+    
+    vim-snippets = vimUtils.buildVimPlugin {
+      name = "vim-snippets";
+      src = sources.vim-snippets;
+      buildPhase = ":";
+    };
+
+    ##
+
+    vim-terraform = vimUtils.buildVimPlugin {
+      name = "vim-terraform";
+      src = sources.vim-terraform;
+      buildPhase = ":";
+    };
+
+    vim-tmux-navigator = vimUtils.buildVimPlugin {
+      name = "vim-tmux-navigator";
+      src = sources.vim-tmux-navigator;
+      buildPhase = ":";
+    };
+
+    undotree = vimUtils.buildVimPlugin {
+      name = "undotree";
+      src = sources.undotree;
+      buildPhase = ":";
+    };
+
+    vim-fugitive = vimUtils.buildVimPlugin {
+      name = "vim-fugitive";
+      src = sources.vim-fugitive;
+      buildPhase = ":";
+    };
+
+    vim-gitgutter = vimUtils.buildVimPlugin {
+      name = "vim-gitgutter";
+      src = sources.vim-gitgutter;
+      buildPhase = ":";
+    };
+
+    git-worktree-nvim = vimUtils.buildVimPlugin {
+      name = "git-worktree-nvim";
+      src = sources.git-worktree-nvim;
+      buildPhase = ":";
+    };
+
+    popup-nvim = vimUtils.buildVimPlugin {
+      name = "popup-nvim";
+      src = sources.popup-nvim;
+      buildPhase = ":";
+    };
+
+    plenary-nvim = vimUtils.buildVimPlugin {
+      name = "plenary-nvim";
+      src = sources.plenary-nvim;
+      buildPhase = ":";
+    };
+
+    telescope-nvim = vimUtils.buildVimPlugin {
+      name = "telescope-nvim";
+      src = sources.telescope-nvim;
+      buildPhase = ":";
+    };
+
+    telescope-fzf-native-nvim = vimUtils.buildVimPlugin {
+      name = "telescope-fzf-native-nvim";
+      src = sources.telescope-fzf-native-nvim;
+      buildPhase = ":";
+    };
+
     ## Color Schemes
     zephyr-nvim = vimUtils.buildVimPlugin {
       name = "zephyr-nvim";

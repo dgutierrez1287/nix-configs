@@ -98,9 +98,9 @@ in
             customVim.nvim-autopairs
 
 			# snippets
-			customPlugins.ultisnips
-			customPlugins.telescope-ultisnips-nvim
-			customPlugins.vim-snippets
+			customVim.ultisnips
+			customVim.telescope-ultisnips-nvim
+			customVim.vim-snippets
 
 			# terminal
 		    customVim.vim-floaterm
@@ -115,28 +115,28 @@ in
             customVim.lualine-nvim
 
 			# language stuff
-			customPlugins.vim-terraform
+			customVim.vim-terraform
             customVim.vim-nix
 
 			# motion
-			customPlugins.vim-tmux-navigator
+			customVim.vim-tmux-navigator
 
 			# undos
-			customPlugins.undotree
+			customVim.undotree
 
 			# git
-			customPlugins.vim-fugitive
-			customPlugins.vim-gitgutter
-			customPlugins.git-worktree-nvim
+			customVim.vim-fugitive
+			customVim.vim-gitgutter
+			customVim.git-worktree-nvim
 
 			# comments
             customVim.comment-nvim
 
 			# telescope and requirements
-			customPlugins.popup-nvim
-			customPlugins.plenary-nvim
-			customPlugins.telescope-nvim
-			customPlugins.telescope-fzy-native-nvim
+			customVim.popup-nvim
+			customVim.plenary-nvim
+			customVim.telescope-nvim
+			customVim.telescope-fzf-native-nvim
 		];
 	};	
 }
