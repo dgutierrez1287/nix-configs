@@ -1,8 +1,5 @@
 { config, pkgs, lib, ...}: 
 
-let
-	customPlugins = (import ../../sources/neovim-plugins.nix) { pkgs = pkgs; };
-in
 {
 	# lua module files for custom configs
 	home.file.".config/nvim/lua/dg/lsp.lua".source = ./conf/neovim/lua/dg/lsp.lua;
