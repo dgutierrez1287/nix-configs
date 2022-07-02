@@ -1,5 +1,7 @@
 { config, pkgs, lib, ...}: 
-
+let
+	customPlugins = (import conf/neovim/plugins/custom.nix) { pkgs = pkgs; };
+in
 {
 	# lua module files for custom configs
 	home.file.".config/nvim/lua/dg/lsp.lua".source = ./conf/neovim/lua/dg/lsp.lua;
@@ -44,6 +46,7 @@
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
 			(lib.strings.fileContents ./conf/neovim/lualine.vim)
+            (lib.strings.fileContents ./conf/neovim/bufferline.vim)
             (lib.strings.fileContents ./conf/neovim/colors.vim)
 			(lib.strings.fileContents ./conf/neovim/comment-nvim.vim)
 			(lib.strings.fileContents ./conf/neovim/vim-terraform.vim)
@@ -95,9 +98,8 @@
             customVim.nvim-autopairs
 
 			# snippets
-			customVim.ultisnips
-			customVim.telescope-ultisnips-nvim
-			customVim.vim-snippets
+            customVim.luasnip
+            customVim.cmp_luasnip
 
 			# terminal
 		    customVim.vim-floaterm
@@ -110,6 +112,7 @@
             customVim.zephyr-nvim
             customVim.material-nvim
             customVim.lualine-nvim
+            customVim.bufferline-nvim
 
 			# language stuff
 			customVim.vim-terraform
@@ -133,7 +136,7 @@
 			customVim.popup-nvim
 			customVim.plenary-nvim
 			customVim.telescope-nvim
-			customVim.telescope-fzf-native-nvim
+            customPlugins.telescope-fzy-native-nvim
 		];
 	};	
 }

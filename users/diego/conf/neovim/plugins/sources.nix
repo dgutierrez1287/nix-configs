@@ -96,23 +96,22 @@ let sources = import ../../../../../nix/sources.nix; in rec {
       buildPhase = ":";
     };
 
+    bufferline-nvim = vimUtils.buildVimPlugin {
+      name = "bufferline-nvim";
+      src = sources.bufferline-nvim;
+      buildPhase = ":";
+    };
 
     ## Snippet
-    ultisnips = vimUtils.buildVimPlugin {
-      name = "ultisnips";
-      src = sources.ultisnips;
+    luasnip = vimUtils.buildVimPlugin {
+      name = "luasnip";
+      src = sources.luasnip;
       buildPhase = ":";
     };
 
-    telescope-ultisnips-nvim = vimUtils.buildVimPlugin {
-      name = "telescope-ultisnips-nvim";
-      src = sources.telescope-ultisnips-nvim;
-      buildPhase = ":";
-    };
-    
-    vim-snippets = vimUtils.buildVimPlugin {
-      name = "vim-snippets";
-      src = sources.vim-snippets;
+    cmp_luasnip = vimUtils.buildVimPlugin {
+      name = "cmp_luasnip";
+      src = sources.cmp_luasnip;
       buildPhase = ":";
     };
 
@@ -172,9 +171,9 @@ let sources = import ../../../../../nix/sources.nix; in rec {
       buildPhase = ":";
     };
 
-    telescope-fzf-native-nvim = vimUtils.buildVimPlugin {
-      name = "telescope-fzf-native-nvim";
-      src = sources.telescope-fzf-native-nvim;
+    telescope-fzy-native-nvim = vimUtils.buildVimPlugin {
+      name = "telescope-fzy-native-nvim";
+      src = sources.telescope-fzy-native-nvim;
       buildPhase = ":";
     };
 

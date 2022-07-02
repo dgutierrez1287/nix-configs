@@ -1,4 +1,16 @@
 {
+    "bufferline-nvim": {
+        "branch": "main",
+        "description": "A snazzy bufferline for Neovim",
+        "homepage": "",
+        "owner": "akinsho",
+        "repo": "bufferline.nvim",
+        "rev": "68839d62785edfb4ff7a7b3c1e9f4b64d55749e8",
+        "sha256": "0my620rnl3c6d22rgwm824bgflhbhjjk7ryvggbfaap2rw98alq3",
+        "type": "tarball",
+        "url": "https://github.com/akinsho/bufferline.nvim/archive/68839d62785edfb4ff7a7b3c1e9f4b64d55749e8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "cmp-buffer": {
         "branch": "main",
         "description": "nvim-cmp source for buffer words",
@@ -45,6 +57,18 @@
         "sha256": "15ksxnwxssv1yr1ss66mbl5w0layq0f4baisd9ki192alnkd7365",
         "type": "tarball",
         "url": "https://github.com/hrsh7th/cmp-path/archive/466b6b8270f7ba89abd59f402c73f63c7331ff6e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "cmp_luasnip": {
+        "branch": "master",
+        "description": "luasnip completion source for nvim-cmp",
+        "homepage": "",
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "rev": "a9de941bcbda508d0a45d28ae366bb3f08db2e36",
+        "sha256": "0mh7gimav9p6cgv4j43l034dknz8szsnmrz49b2ra04yk9ihk1zj",
+        "type": "tarball",
+        "url": "https://github.com/saadparwaiz1/cmp_luasnip/archive/a9de941bcbda508d0a45d28ae366bb3f08db2e36.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "comment-nvim": {
@@ -105,6 +129,18 @@
         "sha256": "07npk6x4ljq7f3wfcs3liaxpn23x4gdxr5jq8vglhd1xj3l99mh5",
         "type": "tarball",
         "url": "https://github.com/nvim-lualine/lualine.nvim/archive/5113cdb32f9d9588a2b56de6d1df6e33b06a554a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "luasnip": {
+        "branch": "master",
+        "description": "Snippet Engine for Neovim written in Lua.",
+        "homepage": "",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "rev": "a12441e0598e93e67235eba67c8e6fbffc896f06",
+        "sha256": "055y9bm8npn8n1xysk83l7ghf0760f8037jm32zf9fc8zk1ki98d",
+        "type": "tarball",
+        "url": "https://github.com/L3MON4D3/LuaSnip/archive/a12441e0598e93e67235eba67c8e6fbffc896f06.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "material-nvim": {
@@ -251,16 +287,16 @@
         "url": "https://github.com/nvim-lua/popup.nvim/archive/b7404d35d5d3548a82149238289fa71f7f6de4ac.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "telescope-fzf-native-nvim": {
-        "branch": "main",
-        "description": "FZF sorter for telescope written in c",
-        "homepage": "",
+    "telescope-fzy-native-nvim": {
+        "branch": "master",
+        "description": "FZY style sorter that is compiled",
+        "homepage": null,
         "owner": "nvim-telescope",
-        "repo": "telescope-fzf-native.nvim",
-        "rev": "6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6",
-        "sha256": "1ssznk16fhnqsp2kwff48ccbrgw2cbaxjhbj6wzap9cbw78kxpf9",
+        "repo": "telescope-fzy-native.nvim",
+        "rev": "7b3d2528102f858036627a68821ccf5fc1d78ce4",
+        "sha256": "13jxrvf7cgzhw5zbf69hcnjf1la3prll780lq07h06wakpyrrm4y",
         "type": "tarball",
-        "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6.tar.gz",
+        "url": "https://github.com/nvim-telescope/telescope-fzy-native.nvim/archive/7b3d2528102f858036627a68821ccf5fc1d78ce4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "telescope-nvim": {
@@ -273,18 +309,6 @@
         "sha256": "11ahi16nd21p9413d3rdw25bgzjkp3k83p6a1jwka3pk15c87nl0",
         "type": "tarball",
         "url": "https://github.com/nvim-telescope/telescope.nvim/archive/d88b44ddf14670cffa9fdb1eaca7a0429a973653.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "telescope-ultisnips-nvim": {
-        "branch": "main",
-        "description": null,
-        "homepage": null,
-        "owner": "fhill2",
-        "repo": "telescope-ultisnips.nvim",
-        "rev": "f48b6d4f53b31507d3fd514905c6940409e8ada8",
-        "sha256": "0333k3m0fygc4r7w56csf0h282gf2wqrykl52n6310i9vardyqw7",
-        "type": "tarball",
-        "url": "https://github.com/fhill2/telescope-ultisnips.nvim/archive/f48b6d4f53b31507d3fd514905c6940409e8ada8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tree-sitter-bash": {
@@ -407,18 +431,6 @@
         "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/0e36bed171768908f331ff7dff9d956bae016efb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "ultisnips": {
-        "branch": "master",
-        "description": "UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!",
-        "homepage": "",
-        "owner": "SirVer",
-        "repo": "ultisnips",
-        "rev": "5fc4862eea9bc72cf0f03c56a4a09fd76d9fee35",
-        "sha256": "04hy5v2brixsg5b3pl3d1m1ihwh5yj98zi3zm1zrj4r4kafnm08x",
-        "type": "tarball",
-        "url": "https://github.com/SirVer/ultisnips/archive/5fc4862eea9bc72cf0f03c56a4a09fd76d9fee35.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "undotree": {
         "branch": "master",
         "description": "The undo history visualizer for VIM",
@@ -477,18 +489,6 @@
         "sha256": "1vaprm79j0nfl37r6lw0zwd048ajd5sc9cvny59qwdl3x0zk38av",
         "type": "tarball",
         "url": "https://github.com/LnL7/vim-nix/archive/7d23e97d13c40fcc6d603b291fe9b6e5f92516ee.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "vim-snippets": {
-        "branch": "master",
-        "description": "vim-snipmate default snippets (Previously snipmate-snippets)",
-        "homepage": "",
-        "owner": "honza",
-        "repo": "vim-snippets",
-        "rev": "222cf7b44bb569c9a046a9891000c898bd4c43c9",
-        "sha256": "0xksa854c8rjp9y2xvhk78z5ha9p8c3pvpzvddii2aay22cfkn8h",
-        "type": "tarball",
-        "url": "https://github.com/honza/vim-snippets/archive/222cf7b44bb569c9a046a9891000c898bd4c43c9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-terraform": {
