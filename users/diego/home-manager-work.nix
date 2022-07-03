@@ -1,4 +1,9 @@
-{lib, config, pkgs, machineUse, machineType, guiType, ...}:{
+{lib, config, pkgs, machineUse, machineType, guiType, flakeName, ...}:{
+
+    # general session values
+	home.sessionVariables = {
+		FLAKENAME = flakeName;
+	};
 
 	imports = [
 		./base_packages.nix

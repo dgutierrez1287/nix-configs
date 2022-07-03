@@ -10,7 +10,7 @@ require'nvim-tree'.setup {
         mappings = {
             list = {
                 {key = "s", action = "vsplit"},
-                {key = "h", action = "split"},
+                {key = "i", action = "split"},
             },
         },
         hide_root_folder = true,
