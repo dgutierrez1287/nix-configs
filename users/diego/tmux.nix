@@ -13,6 +13,9 @@
 			tmuxPlugins.yank
 		];		
 		extraConfig = ''
+            # reload config key binding 
+            bind r source-file ~/.config/tmux/tmux.conf \; display 'sourced ~/.config/tmux/tmux.conf'
+
 			# toggle synchronized-panes
 			bind C-x setw synchronize-panes
 			setw -g window-status-current-format '#{?pane_synchronized,#[bg=red],}#I:#W:#F'
@@ -26,11 +29,20 @@
             set -g status-keys vi
 
 			# set new panes to open in current directory
-			bind '"' split-window -c "#{pane_current_path}"
-			bind % split-window -h -c "#{pane_current_path}"
+			bind '-' split-window -c "#{pane_current_path}"
+			bind | split-window -h -c "#{pane_current_path}"
+            unbind '"'
+            unbind %
 
 			# resurrect restore
 			set -g @resurrect-restore 'R'
+
+            # turn off renaming 
+            set-option -g allow-rename off
+
+            # binding to resize-window
+            bind w resize-window -A \; display 'resizing window'
+
 
 			# shell settings
 			set -g default-shell $SHELL
