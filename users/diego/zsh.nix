@@ -31,13 +31,26 @@
 		};
 
 		shellAliases = {
+            # general
 			la = "ls -la";
 			ll = "ls -l";
+
+            # Terraform
 			tf = "terraform";
+
+            # docker
 			d = "docker";
 			dcc = "docker compose";
 			dc = "docker-compose";
 			dockergc = "docker system prune -f";
+
+            # tmux
+            t = "tmux";
+            ta = "tmux a -t";
+            tls = "tmux ls";
+            tn = "tmux new -t";
+            tkser = "tmux kill-server";
+            tks = "tmux kill-session -t";
 		};
 
 		initExtra = builtins.readFile ./conf/zsh/zshrc;

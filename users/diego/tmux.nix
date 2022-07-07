@@ -11,6 +11,8 @@
 			tmuxPlugins.continuum
             tmuxPlugins.vim-tmux-navigator
 			tmuxPlugins.yank
+            tmuxPlugins.extrakto
+            tmuxPlugins.copycat
 		];		
 		extraConfig = ''
             # reload config key binding 
@@ -24,15 +26,29 @@
             # Use vi keybindings in copy and choice modes
             setw -g mode-keys vi
 
+            unbind -T copy-mode-vi Space; #Default for begin-selection
+            unbind -T copy-mode-vi Enter; #Default for copy-selection
+
+            bind -T copy-mode-vi v send-keys -X begin-selection
+            bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel --clipboard"
+
             # Use vi keybindings for tmux commandline input.
             # Note that to get command mode you need to hit ESC twice...
             set -g status-keys vi
 
+            # bind-key -T copy-mode-vi v send -X begin-selection
+            bind-key -T copy-mode-vi V send -X select-line
+            bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
 			# set new panes to open in current directory
-			bind '-' split-window -c "#{pane_current_path}"
-			bind | split-window -h -c "#{pane_current_path}"
+            bind i split-window -c "#{pane_current_path}" # open horizontal split in the same directory as the current one
+			bind s split-window -h -c "#{pane_current_path}" # open vertical split in the same directory as the current one
             unbind '"'
             unbind %
+
+            # swapping panes 
+            bind > swap-pane -D       # swap current pane with the next one
+            bind < swap-pane -U       # swap current pane with the previous one
 
 			# resurrect restore
 			set -g @resurrect-restore 'R'
@@ -42,7 +58,6 @@
 
             # binding to resize-window
             bind w resize-window -A \; display 'resizing window'
-
 
 			# shell settings
 			set -g default-shell $SHELL

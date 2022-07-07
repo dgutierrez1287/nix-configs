@@ -37,6 +37,9 @@
         xdg-launch
         w3m
 
+        # home-manager
+        home-manager
+
 		# nix utils to get fetch settings for packages
 		nix-prefetch-github
 		nix-prefetch
