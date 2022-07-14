@@ -13,12 +13,19 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+        darwin = {
+            url = "github:lnl7/nix-darwin";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
 		# url for neovim nightly overlay
 		neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 	};
 
-	outputs = {self, nixpkgs, home-manager, ...}@inputs: let
-		mkDevVm = import ./lib/mkDevVm.nix;
+	outputs = {self, nixpkgs, home-manager, darwin, ...}@inputs: let
+		mkDevVm = import ./lib/mkDevVm.nix; # Dev VM setup
+
+        mkMac = import ./lib/mkMac.nix; # MacOS machine setup
 
 		overlays = [
 			inputs.neovim-nightly-overlay.overlay
@@ -45,5 +52,13 @@
 			guiType = "no-gui";
 			machineType = "work";
 		};
+
+        darwinConfigurations.mac-mini = mkMac "mac-mini" rec {
+            inherit overlays nixpkgs home-manager darwin;
+            system = "x86_64-darwin";
+            user = "diego";
+            guiType = "gui";
+            machineType = "personal";
+        };
 	};
 }

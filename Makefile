@@ -1,10 +1,25 @@
 # Get the path to this Makefile and directory
 MAKEFILE_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 
+# Detect OS
+OS := $(shell uname)
+
+# User input/env vars
 FLAKENAME ?= ""
 NIXUSER ?= "diego"
 
+
+# OS specific stuff
+ifeq ($(OS),Darwin) # MacOS
+	NIX_CMD = darwin-rebuild
+endif
+
+ifeq ($(OS),Linux) # Linux
+	NIX_CMD = nixos-rebuild
+endif
+
 list-vars:
+	@echo "OS type: ${OS}"
 	@echo "Repo Dir Path: ${MAKEFILE_DIR}"
 	@echo "Flake name: ${FLAKENAME}"
 	@echo "nix user: ${NIXUSER}"
@@ -30,8 +45,7 @@ copy-nix:
 		. /nix-configs/		
 
 switch: copy-nix
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nix-configs#${FLAKENAME}"
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 ${NIX_CMD} switch --flake "/nix-configs#${FLAKENAME}"
 
-test:
-	copy-nix
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake "/nix-configs#$(FLAKENAME)"
+test: copy-nix
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 ${NIX_CMD} test --flake "/nix-configs#$(FLAKENAME)"

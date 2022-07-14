@@ -1,4 +1,4 @@
-{lib, config, pkgs, machineUse, machineType, guiType, flakeName, ...}:{
+{lib, config, pkgs, machineUse, machineType, guiType, flakeName, currentSystem, ...}:{
 
 	# general session values
 	home.sessionVariables = {
@@ -16,10 +16,14 @@
 	   then [
 		   ./neovim.nix
 		   ./dev_packages.nix
-		   ./file_browser.nix
 		   ./powershell.nix
 	   ]
-	   else[])
+       else[])
+       ++ (if (machineUse == "dev" && guiType == "no-gui")
+       then[
+          ./file_browser.nix
+       ]
+       else[])
 	++ (if guiType == "gui"
 	   then []
 	   else []);
