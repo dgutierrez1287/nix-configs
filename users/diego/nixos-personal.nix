@@ -7,7 +7,7 @@
 
 	users.users.diego = {
 		isNormalUser = true;
-		home = "${ if pkgs.stdenvNoCC.isDarwin then "/Users" else "/home" }/diego";
+		home = "/home/diego";
 		extraGroups = [ "docker" "wheel" "users" "diego" ];
 		shell = pkgs.zsh;
 		uid = 1000;
