@@ -10,7 +10,7 @@ darwin.lib.darwinSystem rec {
 
     # config imports
     ../machines/macs/${name}.nix
-    ../users/${user}/nixos-${machineType}.nix
+    ../users/${user}/darwin.nix
 
     # home-manager
     home-manager.darwinModules.home-manager {
