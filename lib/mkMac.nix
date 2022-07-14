@@ -33,12 +33,12 @@ darwin.lib.darwinSystem rec {
     }
   ];
 
-  extraArgs = {
-    username = user;
-    guiType = guiType;
-    machineType = machineType;
-    currentSystem = system;
-    machineUse = "dev";
-    flakeName = name;
-  };
+  #extraArgs = {
+  #  username = user;
+  #  guiType = guiType;
+  #  machineType = machineType;
+  #  currentSystem = system;
+  # machineUse = "dev";
+  #  flakeName = name;
+  #};
 }
