@@ -60,5 +60,13 @@
             guiType = "gui";
             machineType = "personal";
         };
+
+        darwinConfigurations.macbook-pro = mkMac "macbook-pro" rec {
+            inherit overlays nixpkgs home-manager darwin;
+            system = "aarch64-darwin";
+            user = "diego";
+            guiType = "gui";
+            machineType = "personal";
+        };
 	};
 }
