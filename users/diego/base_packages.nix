@@ -10,7 +10,7 @@
 		bat
 		fzf
 		jq
-        yq
+        #yq
 		wget
 		curl
 		ripgrep
