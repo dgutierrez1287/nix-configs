@@ -41,7 +41,7 @@ in
             (lib.strings.fileContents ./conf/neovim/tree-sitter.vim)
             (lib.strings.fileContents ./conf/neovim/nvim-cmp.vim)
             (lib.strings.fileContents ./conf/neovim/glow.vim)
-			(lib.strings.fileContents ./conf/neovim/snippets.vim)
+			(lib.strings.fileContents ./conf/neovim/luasnip.vim)
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
