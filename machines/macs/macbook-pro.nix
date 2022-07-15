@@ -4,5 +4,6 @@
   ];
 
   # networking
-  networking.computerName = "Diego's MacBook Pro";
+  networking.computerName = "Diego MacBook Pro";
+
 }
