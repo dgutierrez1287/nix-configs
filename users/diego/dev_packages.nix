@@ -28,7 +28,7 @@
 		sumneko-lua-language-server
 
 		# docker
-		docker-compose_2
+        #docker-compose_2
 		docker-compose
 
 		# database stuff
