@@ -13,7 +13,7 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
      recursive
-     nerd-fonts
+     (nerdfonts.override { fonts = [ "FiraCode" ]; })
    ];
 
 }
