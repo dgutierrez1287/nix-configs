@@ -1,7 +1,7 @@
 {config, pkgs, ...}: {
   # keyboard 
-  # system.keyboard.enableKeyMapping = true;
-  # system.keyboard.remapCapsLockToEscape = true;
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToEscape = true;
 
   # finder changes
   system.defaults.finder.AppleShowAllExtensions = true;
