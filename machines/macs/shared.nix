@@ -6,4 +6,10 @@
   # finder changes
   system.defaults.finder.AppleShowAllExtensions = true;
 
+  # nix-daemon
+  services.nix-daemon.enable = true;
+
+
+
+
 }
