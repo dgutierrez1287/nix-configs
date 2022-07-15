@@ -1,6 +1,7 @@
 { config, pkgs, lib, ...}: 
 let
 	customPlugins = (import conf/neovim/plugins/custom.nix) { pkgs = pkgs; };
+    unstable = import <unstable> {};
 in
 {
 	# lua module files for custom configs
@@ -53,31 +54,31 @@ in
 		];
 
 		# extra packages neovim needs
-		extraPackages = [
+		extraPackages = with pkgs; [
             # typescript
-			pkgs.nodePackages.typescript
-			pkgs.nodePackages.typescript-language-server
+			nodePackages.typescript
+			nodePackages.typescript-language-server
 
             # bash
-			pkgs.nodePackages.bash-language-server
+			nodePackages.bash-language-server
 
             #vim
-      		pkgs.nodePackages.vim-language-server
+      		nodePackages.vim-language-server
 
             # lua
-			pkgs.sumneko-lua-language-server			
+			unstable.sumneko-lua-language-server			
 
             # golang
-			pkgs.gopls
+			gopls
 
             # nixos
-            pkgs.rnix-lsp
+            rnix-lsp
 
             # python
-            pkgs.nodePackages.pyright
+            nodePackages.pyright
 
             # terraform
-            pkgs.terraform-ls
+            terraform-ls
 		];
 		plugins = with pkgs; [
 			# lsp
