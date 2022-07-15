@@ -4,13 +4,13 @@
 	inputs = {
 
 		# url for nixpkgs 
-        nixpkgs.url = "github:nixos/nixpkgs/release-22.05";
+        nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 		
 		# url for home manager package
 		home-manager = {
             #url = "github:nix-community/home-manager/release-21.11";
-            url = "github:nix-community/home-manager/release-22.05";
+            url = "github:nix-community/home-manager/release-21.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
