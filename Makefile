@@ -8,16 +8,6 @@ OS := $(shell uname)
 FLAKENAME ?= ""
 NIXUSER ?= "diego"
 
-
-# OS specific stuff
-ifeq ($(OS),Darwin) # MacOS
-	NIX_CMD = darwin-rebuild
-endif
-
-ifeq ($(OS),Linux) # Linux
-	NIX_CMD = nixos-rebuild
-endif
-
 list-vars:
 	@echo "OS type: ${OS}"
 	@echo "Repo Dir Path: ${MAKEFILE_DIR}"
@@ -45,7 +35,14 @@ copy-nix:
 		. /nix-configs/		
 
 switch: copy-nix
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 ${NIX_CMD} switch --flake "/nix-configs#${FLAKENAME}"
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nix-configs#${FLAKENAME}"
 
 test: copy-nix
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 ${NIX_CMD} test --flake "/nix-configs#$(FLAKENAME)"
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake "/nix-configs#$(FLAKENAME)"
+
+switch-mac:
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 darwin-rebuild switch --flake ".#${FLAKENAME}"
+
+test-mac:
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 darwin-rebuild test --flake ".#${FLAKENAME}"
+	
