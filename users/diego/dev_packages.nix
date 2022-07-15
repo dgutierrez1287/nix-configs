@@ -4,7 +4,7 @@
 	home.packages = with pkgs; [
 		# infra as code tools
 		tfenv
-		awscli2
+		awscli
 
 		# golang
 		go
