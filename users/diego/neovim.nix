@@ -1,7 +1,7 @@
 { config, pkgs, lib, ...}: 
 let
 	customPlugins = (import conf/neovim/plugins/custom.nix) { pkgs = pkgs; };
-    unstable = import <unstable> {};
+    unstable = import <nixpkgs-unstable> {};
 in
 {
 	# lua module files for custom configs
