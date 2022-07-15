@@ -1,7 +1,7 @@
 { config, pkgs, lib, ...}: 
 let
 	customPlugins = (import conf/neovim/plugins/custom.nix) { pkgs = pkgs; };
-    unstable = import <nixpkgs-unstable> {};
+    unstable = import <unstable> {};
 in
 {
 	# lua module files for custom configs
@@ -66,7 +66,7 @@ in
       		nodePackages.vim-language-server
 
             # lua
-			unstable.sumneko-lua-language-server			
+			sumneko-lua-language-server			
 
             # golang
 			gopls
