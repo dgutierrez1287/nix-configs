@@ -66,7 +66,7 @@ in
       		nodePackages.vim-language-server
 
             # lua
-			sumneko-lua-language-server			
+			unstable.sumneko-lua-language-server			
 
             # golang
 			gopls
