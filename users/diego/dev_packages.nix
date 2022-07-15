@@ -4,7 +4,7 @@
 	home.packages = with pkgs; [
 		# infra as code tools
 		tfenv
-		awscli
+        #awscli2
 
 		# golang
 		go
@@ -29,7 +29,7 @@
 
 		# docker
         #docker-compose_2
-		docker-compose
+        #docker-compose
 
 		# database stuff
 		fsql
