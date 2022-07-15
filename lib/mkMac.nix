@@ -18,7 +18,7 @@ darwin.lib.darwinSystem rec {
       home-manager.useUserPackages = true;
       home-manager.users.${user} = {
         imports = [
-          ../users/${user}/home-manager-${machineType}.nix
+          ../users/${user}/home-manager-personal.nix
         ];
       };
 
