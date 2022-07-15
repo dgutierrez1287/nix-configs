@@ -66,7 +66,7 @@ in
       		nodePackages.vim-language-server
 
             # lua
-			unstable.sumneko-lua-language-server			
+            #unstable.sumneko-lua-language-server			
 
             # golang
 			gopls
@@ -79,7 +79,9 @@ in
 
             # terraform
             terraform-ls
-		];
+          ] ++ (with unstable; [
+            sumneko-lua-language-server
+          ]);
 		plugins = with pkgs; [
 			# lsp
 			customVim.nvim-lspconfig
