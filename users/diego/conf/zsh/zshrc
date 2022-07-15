@@ -9,3 +9,5 @@ ssh-add ~/.ssh/id_rsa > /dev/null
 
 echo "keys added:"
 ssh-add -l
+
+export PATH=$PATH:/etc/profiles/per-user/diego/bin
