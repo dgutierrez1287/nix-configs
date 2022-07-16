@@ -13,7 +13,7 @@
     enable = true;
 
     casks = [
-      iterm2
+      "iterm2"
     ];
   };
 }
