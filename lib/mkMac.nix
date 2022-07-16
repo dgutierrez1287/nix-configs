@@ -23,6 +23,7 @@ darwin.lib.darwinSystem rec {
       };
 
       home-manager.extraSpecialArgs = {
+        os = "Darwin";
         username = user;
         guiType = guiType;
         currentSystem = system;

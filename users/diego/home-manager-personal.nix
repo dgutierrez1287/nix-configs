@@ -1,4 +1,4 @@
-{lib, config, pkgs, machineUse, machineType, guiType, flakeName, currentSystem, ...}:{
+{lib, config, pkgs, machineUse, machineType, os, guiType, flakeName, currentSystem, ...}:{
 
 	# general session values
 	home.sessionVariables = {
@@ -26,5 +26,10 @@
        else[])
 	++ (if guiType == "gui"
 	   then []
-	   else []);
+	   else [])
+    ++ (if os == "Darwin"
+       then[
+          ./darwin_packages.nix
+       ]
+       else[]);
 }
