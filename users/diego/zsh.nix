@@ -1,6 +1,13 @@
 {lib, config, pkgs, ...}:
-
-{
+let
+  if (os == "Darwin") 
+  then initExtraText = builtins.readFile ./conf/zsh/zshrc
+  else initExtraText = builtins.concatStringsSep "\n" [
+    (lib.strings.fileContents ./conf/zsh/zshrc)
+    (lib.strings.fileContents ./conf/zsh/zsh-homebrew)
+  ];
+in 
+{ 
 
 	programs.zsh = {
 		enable = true;
@@ -53,7 +60,7 @@
             tks = "tmux kill-session -t";
 		};
 
-		initExtra = builtins.readFile ./conf/zsh/zshrc;
+		initExtra = initExtraText;
 
 		initExtraBeforeCompInit = ''
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
