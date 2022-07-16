@@ -52,7 +52,7 @@
             tks = "tmux kill-session -t";
 		};
 
-        initExtra = [
+        initExtra = builtins.concatStringsSep "\n" [
           (lib.strings.fileContents ./conf/zsh/zshrc)
         ]
         ++ (if os == "Darwin"
