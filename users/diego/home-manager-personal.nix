@@ -28,8 +28,6 @@
 	   then []
 	   else [])
     ++ (if os == "Darwin"
-       then[
-          ./darwin_packages.nix
-       ]
+       then[]
        else[]);
 }

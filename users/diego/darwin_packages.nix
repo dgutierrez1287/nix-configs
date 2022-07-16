@@ -4,6 +4,5 @@
   nixpkgs.config.allowUnFree = true;
 
   home.packages = with pkgs; [
-    iterm2
   ];
 }
