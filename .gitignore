@@ -1,3 +1,4 @@
 /dotfiles
 vmconfig.json
 hardware/**.nix
+result
