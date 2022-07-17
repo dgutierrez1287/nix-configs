@@ -41,8 +41,8 @@ test: copy-nix
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake "/nix-configs#$(FLAKENAME)"
 
 switch-mac:
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 /run/current-system/sw/bin/darwin-rebuild switch --flake ".#${FLAKENAME}"
+	NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 /run/current-system/sw/bin/darwin-rebuild switch --flake ".#${FLAKENAME}"
 
 test-mac:
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 /run/current-system/sw/bin/darwin-rebuild test --flake ".#${FLAKENAME}"
+	NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 /run/current-system/sw/bin/darwin-rebuild test --flake ".#${FLAKENAME}"
 	
