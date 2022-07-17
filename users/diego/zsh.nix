@@ -52,7 +52,7 @@
             tks = "tmux kill-session -t";
 		};
 
-        initExtra = builtins.readfile ./conf/zsh/zshrc;
+        initExtra = builtins.readFile ./conf/zsh/zshrc;
 
 		initExtraBeforeCompInit = ''
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
