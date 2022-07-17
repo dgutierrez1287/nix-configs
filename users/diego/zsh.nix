@@ -52,14 +52,7 @@
             tks = "tmux kill-session -t";
 		};
 
-        initExtra = builtins.concatStringsSep "\n" [
-          (lib.strings.fileContents ./conf/zsh/zshrc)
-        ]
-        ++ (if os == "Darwin"
-           then [
-             (lib.strings.fileContents ./conf/zsh/zsh-homebrew)
-           ]
-           else[]);
+        initExtra = builtins.readfile ./conf/zsh/zshrc;
 
 		initExtraBeforeCompInit = ''
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
