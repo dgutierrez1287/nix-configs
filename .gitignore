@@ -2,3 +2,5 @@
 vmconfig.json
 hardware/**.nix
 result
+iso/nixos.iso
+.DS_Store
