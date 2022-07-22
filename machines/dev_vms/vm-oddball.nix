@@ -12,6 +12,10 @@
 		openconnect
 	];
 
+    environment.systemPackages = with pkgs; [
+      remmina # for RDP
+   ];
+
 	services.squid = {
 		enable = true;
 		proxyPort = 3128;
