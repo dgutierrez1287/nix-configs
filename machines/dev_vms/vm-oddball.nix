@@ -10,11 +10,8 @@
 
 	environment.systemPackages = with pkgs; [
 		openconnect
+        remmina # RDP over x11
 	];
-
-    environment.systemPackages = with pkgs; [
-      remmina # for RDP
-   ];
 
 	services.squid = {
 		enable = true;
