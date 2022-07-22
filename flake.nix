@@ -4,7 +4,7 @@
 	inputs = {
 
 		# url for nixpkgs 
-        nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
+        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 		
 		# url for home manager package
@@ -40,7 +40,7 @@
 	in {
 		nixosConfigurations.vm-maindev = mkDevVm "vm-maindev" rec {
 			inherit overlays nixpkgs home-manager;
-			system = "x86_64-linux";
+			system = "aarch64-linux";
 			user = "diego";
 			guiType = "no-gui";
 			machineType = "personal";
@@ -48,8 +48,8 @@
 
 		nixosConfigurations.vm-oddball = mkDevVm "vm-oddball" rec {
 			inherit overlays nixpkgs home-manager;	
-			system = "x86_64-linux";
-			user = "diego-oddball";
+			system = "aarch64-linux";
+			user = "diego";
 			guiType = "no-gui";
 			machineType = "work";
 		};

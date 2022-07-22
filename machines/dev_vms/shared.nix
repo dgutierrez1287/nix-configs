@@ -36,6 +36,7 @@
         xdg-utils
         xdg-launch
         w3m
+        unzip
 
         # home-manager
         home-manager
@@ -50,6 +51,7 @@
 	services.openssh.enable = true;
 	services.openssh.passwordAuthentication = true;
 	services.openssh.permitRootLogin = "yes";
+    services.openssh.forwardX11 = true;
 
 	# disable the firewall
 	networking.firewall.enable = false;

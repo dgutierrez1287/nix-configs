@@ -21,7 +21,7 @@ nixpkgs.lib.nixosSystem rec {
 				];
 			};
 			home-manager.extraSpecialArgs = {
-                os = "Linux"
+                os = "Linux";
 				guiType = guiType;
 				username = user;
 				currentSystem = system;

@@ -3,8 +3,8 @@
 		./shared.nix
 	];
 
-	networking.interfaces.ens33.useDHCP = true;
-    networking.interfaces.ens34.useDHCP = true;
+	networking.interfaces.enp0s6.useDHCP = true;
+    networking.interfaces.enp0s9.useDHCP = true;
 
 	networking.hostName = "oddball-dev";
 
@@ -40,9 +40,14 @@
 	http_access deny CONNECT !SSL_ports
 	http_access allow localhost manager
 	http_access deny manager
-	include /etc/squid/conf.d/*
 	http_access allow localhost
 	http_access allow all
+    http_port 3128
+    cache_log       syslog
+    access_log      stdio:/var/log/squid/access.log
+    cache_store_log stdio:/var/log/squid/store.log
+    pid_filename    /run/squid.pid
+    cache_effective_user squid squid
 	coredump_dir /var/spool/squid
 	refresh_pattern ^ftp:           1440    20%     10080
 	refresh_pattern ^gopher:        1440    0%      1440

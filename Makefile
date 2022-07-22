@@ -45,4 +45,7 @@ switch-mac:
 
 test-mac:
 	NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 /run/current-system/sw/bin/darwin-rebuild test --flake ".#${FLAKENAME}"
+
+iso/nixos.iso:
+	cd iso; ./build.sh
 	

@@ -50,6 +50,11 @@
             tn = "tmux new -t";
             tkser = "tmux kill-server";
             tks = "tmux kill-session -t";
+
+            # vim to nvim NOTE: there is an issue on darwin not honoring 
+            # vim binding from nvim program config
+            vi = "nvim";
+            vim = "nvim";
 		};
 
         initExtra = builtins.readFile ./conf/zsh/zshrc;

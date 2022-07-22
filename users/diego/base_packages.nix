@@ -1,4 +1,4 @@
-{lib, config, pkgs, ...}:
+{lib, config, pkgs, os, ...}:
 
 {
 	nixpkgs.config.allowUnFree = true;
@@ -19,6 +19,11 @@
 		pstree
 		nix-tree
 		nix-update
-	];
+      ] 
+      ++(if os == "Linux"
+      then [
+        yq
+      ]
+      else[]);
 
 }

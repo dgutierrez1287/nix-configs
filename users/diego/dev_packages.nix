@@ -1,4 +1,4 @@
-{lib, config, pkgs, ...}:
+{lib, config, pkgs, os, ...}:
 
 {
 	home.packages = with pkgs; [
@@ -36,5 +36,11 @@
 
         # terminal web browser
         lynx
-	];
+      ]
+      ++ (if os == "Linux"
+          then [
+            awscli2
+            docker-compose
+          ]
+          else []);
 }
