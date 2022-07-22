@@ -14,18 +14,21 @@ vm_name=$2
 # vmInstall #
 # Installs and configures nixos on a new VM
 function vmInstall() {
+    blockDevice=( $(cat ${SCRIPT_DIR}/vmconfig.json | jq -r --arg name "${vm_name}" \
+        '.vms[] | select (.vmName == $name) | .blockDevice') )
+
 	echo "running install of nixos on the VM"
 	echo " "
 
 	sshpass -proot ssh ${SSH_OPTIONS_PASS} root@${vm_ip} " \
-		parted /dev/sda -- mklabel gpt; \
-		parted /dev/sda -- mkpart primary 512MiB -8GiB; \
-		parted /dev/sda -- mkpart primary linux-swap -8GiB 100\%; \
-		parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB; \
-		parted /dev/sda -- set 3 esp on; \
-		mkfs.ext4 -L nixos /dev/sda1; \
-		mkswap -L swap /dev/sda2; \
-		mkfs.fat -F 32 -n boot /dev/sda3; \
+		parted /dev/${blockDevice} -- mklabel gpt; \
+		parted /dev/${blockDevice} -- mkpart primary 512MiB -8GiB; \
+		parted /dev/${blockDevice} -- mkpart primary linux-swap -8GiB 100\%; \
+		parted /dev/${blockDevice} -- mkpart ESP fat32 1MiB 512MiB; \
+		parted /dev/${blockDevice} -- set 3 esp on; \
+		mkfs.ext4 -L nixos /dev/${blockDevice}1; \
+		mkswap -L swap /dev/${blockDevice}2; \
+		mkfs.fat -F 32 -n boot /dev/${blockDevice}3; \
 		mount /dev/disk/by-label/nixos /mnt; \
 		mkdir -p /mnt/boot; \
 		mount /dev/disk/by-label/boot /mnt/boot; \
@@ -39,7 +42,6 @@ function vmInstall() {
 			users.users.root.initialPassword = \"root\";\n \
 		' /mnt/etc/nixos/configuration.nix; \
 		nixos-install --no-root-passwd; \
-		reboot; \
 	"
 }
 
@@ -131,6 +133,7 @@ function remoteCopyNixCode() {
 		--exclude='packer/' \
 		--exclude='vmconfig.json.example' \
 		--exclude='.gitignore' \
+        --exclude='iso/' \
 		--rsync-path="sudo rsync" \
 		${SCRIPT_DIR}/* root@${vm_ip}:/nix-config/
 
