@@ -13,6 +13,9 @@
 		# nodejs
 		nodejs-16_x
 
+        # latex
+        texlive.combined.scheme-full
+
 		# Python 
 		python310
 
