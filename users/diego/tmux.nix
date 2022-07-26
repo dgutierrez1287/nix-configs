@@ -41,10 +41,15 @@
             bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 			# set new panes to open in current directory
-            bind i split-window -c "#{pane_current_path}" # open horizontal split in the same directory as the current one
-			bind s split-window -h -c "#{pane_current_path}" # open vertical split in the same directory as the current one
+            bind v split-window -c "#{pane_current_path}" # open horizontal split in the same directory as the current one
+			bind h split-window -h -c "#{pane_current_path}" # open vertical split in the same directory as the current one
             unbind '"'
             unbind %
+
+            bind-key -r -T prefix C-w resize-pane -U
+            bind-key -r -T prefix C-s resize-pane -D
+            bind-key -r -T prefix C-d resize-pane -R
+            bind-key -r -T prefix C-a resize-pane -L
 
             # swapping panes 
             bind > swap-pane -D       # swap current pane with the next one

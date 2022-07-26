@@ -31,10 +31,10 @@ set nowrap
 set splitbelow splitright
 
 " adjusting splits
-nnoremap <silent> <C-Right> :vertical resize +3<CR>
-nnoremap <silent> <C-Left> :vertical resize -3<CR>
-nnoremap <silent> <C-Up> :resize +3<CR>
-nnoremap <silent> <C-Down> :resize -3<CR>
+nnoremap <silent> <M-Right> :vertical resize +3<CR>
+nnoremap <silent> <M-Left> :vertical resize -3<CR>
+nnoremap <silent> <M-Up> :resize +3<CR>
+nnoremap <silent> <M-Down> :resize -3<CR>
 
 " toggle highlight search
 map <silent> <leader>h :set hlsearch!<cr>
