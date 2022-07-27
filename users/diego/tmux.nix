@@ -46,10 +46,10 @@
             unbind '"'
             unbind %
 
-            bind-key -r -T prefix C-w resize-pane -U
-            bind-key -r -T prefix C-s resize-pane -D
-            bind-key -r -T prefix C-d resize-pane -R
-            bind-key -r -T prefix C-a resize-pane -L
+            bind-key -r -T prefix M-Up resize-pane -U
+            bind-key -r -T prefix M-Down resize-pane -D
+            bind-key -r -T prefix M-Right resize-pane -R
+            bind-key -r -T prefix M-Left resize-pane -L
 
             # swapping panes 
             bind > swap-pane -D       # swap current pane with the next one
