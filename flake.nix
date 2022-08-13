@@ -25,7 +25,7 @@
 
 	outputs = {self, nixpkgs, home-manager, darwin, ...}@inputs: let
 		mkDevVm = import ./lib/mkDevVm.nix; # Dev VM setup
-
+        mkLaptop = import ./lib/mkLaptop.nix; # Laptop NixOS setup
         mkMac = import ./lib/mkMac.nix; # MacOS machine setup
 
 		overlays = [
@@ -38,6 +38,7 @@
 		];
 
 	in {
+        ## Local VM Configs ##
 		nixosConfigurations.vm-maindev = mkDevVm "vm-maindev" rec {
 			inherit overlays nixpkgs home-manager;
 			system = "aarch64-linux";
@@ -53,7 +54,9 @@
 			guiType = "no-gui";
 			machineType = "work";
 		};
+        #######################
 
+        ## Mac Configs ##
         darwinConfigurations.mac-mini = mkMac "mac-mini" rec {
             inherit overlays nixpkgs home-manager darwin;
             system = "x86_64-darwin";
@@ -69,5 +72,16 @@
             guiType = "gui";
             machineType = "personal";
         };
+        ###########################
+
+        ## Laptop NixOS Configs ##
+        nixosConfigurations.dell-studio = mkLaptop "dell-studio" rec {
+          inherit overlays nixpkgs home-manager;
+          system = "x86_64-linux";
+          user = "diego";
+          guiType = "gui";
+          machineType = "personal";
+        };
+        ##########################
 	};
 }
