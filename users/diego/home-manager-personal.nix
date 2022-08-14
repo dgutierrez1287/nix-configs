@@ -23,5 +23,10 @@
        then[
           ./file_browser.nix
        ]
+       else[])
+       ++ (if guiType == "gui"
+       then [
+          ./gui_packages.nix
+       ]
        else[]);
 }
