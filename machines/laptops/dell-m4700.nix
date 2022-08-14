@@ -5,4 +5,10 @@
     ../efi_common.nix
   ];
 
+  networking.hostName = "diego-lix-wkst";
+
+  networking.firewall.allowTCPPorts = [
+    22
+  ];
+
 }

@@ -82,6 +82,14 @@
           guiType = "gui";
           machineType = "personal";
         };
+
+        nixosConfigurations.dell-m4700 = mklaptop "dell-m4700" rec {
+          inherit overlays nixpkgs home-manager;
+          system = "x86_64-Linux";
+          user = "diego";
+          guiType = "gui";
+          machineType = "personal";
+        };
         ##########################
 	};
 }
