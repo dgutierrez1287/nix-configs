@@ -13,7 +13,7 @@
     home-manager
 
     nix-prefetch-github
-    nix-preetch
+    nix-prefetch
     nix-prefetch-git
   ];
 
@@ -23,6 +23,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver = {
+    enable = true;
     layout = "us";
     xkbVariant = "";
   };
@@ -39,7 +40,7 @@
     pulse.enable = true;
   };
 
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 }

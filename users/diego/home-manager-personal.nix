@@ -23,11 +23,5 @@
        then[
           ./file_browser.nix
        ]
-       else[])
-	++ (if guiType == "gui"
-	   then []
-	   else [])
-    ++ (if os == "Darwin"
-       then[]
        else[]);
 }

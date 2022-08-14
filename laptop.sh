@@ -9,6 +9,7 @@ SSH_OPTIONS_KEY="-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 task=$1
 laptop_name=$2
 ip_address=$3
+#debug in $4
 
 ## Functions ##
 function laptopInstall() {
@@ -58,7 +59,7 @@ function laptopInstall() {
 
         sshpass -proot ssh ${SSH_OPTIONS_PASS} root@${ip_address} " \
             sed --in-place '/system\.stateVersion = .*/a \
-            boot.loader.grub.device = \"/dev/sdb\"; \
+            boot.loader.grub.device = \"/dev/sda\"; \
             ' /mnt/etc/nixos/configuration.nix
         "
     fi
@@ -117,11 +118,18 @@ function remoteCopyNixCode() {
 
 function remoteNixRun() {
     echo "running nix switch for the laptop with flakename ${laptop_name}"
+    echo "with debug setting ${debug}"
     echo ""
 
-    sshpass -proot ssh ${SSH_OPTIONS_PASS} root@${ip_address} " \
+    if [ "${debug}" == "no" ]; then 
+        sshpass -proot ssh ${SSH_OPTIONS_PASS} root@${ip_address} " \
             sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake \"/nix-config#${laptop_name}\" \
         "
+    else
+        sshpass -proot ssh ${SSH_OPTIONS_PASS} root@${ip_address} " \
+            sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --show-trace --flake \"/nix-config#${laptop_name}\" \
+        "
+    fi 
 }
 
 
@@ -134,6 +142,13 @@ if [[ "${task}" != "help" ]]; then
     echo ""
     echo ""
 fi
+
+if [ -z $4 ]; then
+    debug="no"
+else
+    debug="yes"
+fi
+
 
 case $task in
 
@@ -156,7 +171,7 @@ case $task in
         echo "laptop.sh"
         echo "Script to boostrap a NixOS install on a hardware laptop, This script must be updated for partitioning of the machine"
         echo ""
-        echo "usage: laptop.sh <task name> <laptop name> <ip address>"
+        echo "usage: laptop.sh <task name> <laptop name> <ip address> <debug>"
         echo ""
         echo "Tasks:"
         echo "laptop-install - Configures the disk and installs Nixos onto the laptop"
