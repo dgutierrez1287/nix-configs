@@ -47,13 +47,21 @@
 			machineType = "personal";
 		};
 
-		nixosConfigurations.vm-oddball = mkDevVm "vm-oddball" rec {
+		nixosConfigurations.vm-oddball-parallels = mkDevVm "vm-oddball-parallels" rec {
 			inherit overlays nixpkgs home-manager;	
 			system = "aarch64-linux";
 			user = "diego";
 			guiType = "no-gui";
 			machineType = "work";
 		};
+
+        nixosConfiguration.vm-oddball-utm = mkDevVm "vm-oddball-utm" rec {
+            inherit overlays nixpkgs home-manager;
+            system = "aarch64-linux";
+            user = "diego";
+            guiType = "no-gui";
+            machineType = "work";
+        };
         #######################
 
         ## Mac Configs ##
@@ -83,9 +91,9 @@
           machineType = "personal";
         };
 
-        nixosConfigurations.dell-m4700 = mklaptop "dell-m4700" rec {
+        nixosConfigurations.dell-m4700 = mkLaptop "dell-m4700" rec {
           inherit overlays nixpkgs home-manager;
-          system = "x86_64-Linux";
+          system = "x86_64-linux";
           user = "diego";
           guiType = "gui";
           machineType = "personal";

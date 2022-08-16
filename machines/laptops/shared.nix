@@ -22,6 +22,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.tailscale.enable = true;
+
   services.xserver = {
     enable = true;
     layout = "us";
