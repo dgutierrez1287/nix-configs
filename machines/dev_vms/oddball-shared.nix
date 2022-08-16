@@ -1,14 +1,6 @@
-{config, pkgs, ... }: {
-	imports = [
-		./shared.nix
-	];
+{config, pkgs, ...}: {
 
-	networking.interfaces.enp0s6.useDHCP = true;
-    networking.interfaces.enp0s9.useDHCP = true;
-
-	networking.hostName = "oddball-dev";
-
-	environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
 		openconnect
         remmina # RDP over x11
 	];

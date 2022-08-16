@@ -187,22 +187,17 @@ case $task in
 	copySshKeys
 ;;
 
-"copy-ssh")
-	remoteCopyNixCode
-;;
-
 "help")
 
-echo "vmManage.sh"
+echo "local-vm.sh"
 echo "Script to manage local NixOS dev VMs, NOTE: to use this the vmconfig.json must be accurate"
 echo ""
-echo "usage: vmManage.sh <task name> <vm name>"
+echo "usage: local-vm.sh <task name> <vm name>"
 echo ""
 echo "Tasks:"
 echo "vm-install - Configures the disk and installs NixOS onto a new VM" 
 echo "bootstrap - Runs nixconfig the first time to prime the system (can be run mutilple times if debugging new system)"
 echo "copy-ssh - Copies the desired private ssh keys to the VM from the local system"
-echo "copy-code - just copies the nix code to the machine, used for testing"
 
 ;;
 
