@@ -19,6 +19,7 @@
 		pstree
 		nix-tree
 		nix-update
+        gnupg
       ] 
       ++(if os == "Linux"
       then [

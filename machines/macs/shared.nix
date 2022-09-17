@@ -1,4 +1,8 @@
 {config, pkgs, ...}: {
+  imports = [
+    ../../modules/duplicity.nix
+  ];
+
   # keyboard 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
