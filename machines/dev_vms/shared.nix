@@ -1,7 +1,4 @@
 {config, pkgs, ...}: {
-  imports = [
-    ../../modules/duplicity.nix
-  ];
 
   # global packages
   environment.systemPackages = with pkgs; [

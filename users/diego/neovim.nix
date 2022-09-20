@@ -64,6 +64,9 @@ in
             #vim
       		nodePackages.vim-language-server
 
+            #dockerfile
+            nodePackages.dockerfile-language-server-nodejs
+
             # lua
             sumneko-lua-language-server			
 

@@ -1,7 +1,4 @@
 {config, pkgs, ...}: {
-  imports = [
-    ../../modules/duplicity.nix
-  ];
 
   # keyboard 
   system.keyboard.enableKeyMapping = true;
