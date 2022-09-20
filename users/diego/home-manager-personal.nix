@@ -3,6 +3,8 @@
 	# general session values
 	home.sessionVariables = {
 		FLAKENAME = flakeName;
+        OS_TYPE = os;
+        MACHINE_TYPE = machineType;
 	};
 
 	imports = [
@@ -24,7 +26,7 @@
           ./file_browser.nix
        ]
        else[])
-       ++ (if guiType == "gui"
+       ++ (if (guiType == "gui" && os != "Darwin")
        then [
           ./gui_packages.nix
        ]

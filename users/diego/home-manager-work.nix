@@ -3,6 +3,8 @@
     # general session values
 	home.sessionVariables = {
 		FLAKENAME = flakeName;
+        OS_TYPE = os;
+        MACHINE_TYPE = machineType;
 	};
 
 	imports = [
