@@ -1,4 +1,4 @@
-{lib, config, pkgs, machineUse, machineType, guiType, flakeName, ...}:{
+{lib, config, pkgs, machineUse, machineType, os, guiType, flakeName, currentSystem, ...}:{
 
     # general session values
 	home.sessionVariables = {
