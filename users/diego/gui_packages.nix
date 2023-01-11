@@ -7,5 +7,6 @@
     remmina
     terminator
     virtualbox
+    vagrant
   ];
 }
