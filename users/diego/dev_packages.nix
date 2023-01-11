@@ -39,6 +39,9 @@
 
         # terminal web browser
         lynx
+
+        # aws-nuke
+        aws-nuke
       ]
       ++ (if os == "Linux"
           then [
