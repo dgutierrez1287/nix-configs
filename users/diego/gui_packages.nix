@@ -6,5 +6,6 @@
     synergy
     remmina
     terminator
+    virtualbox
   ];
 }
