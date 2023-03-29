@@ -34,6 +34,7 @@
       "utm"
       "dbkoda"
       "nosql-workbench"
+      "vagrant"
 
 
       ## Installed outside of nix ##
