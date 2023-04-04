@@ -6,6 +6,10 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 ---------------------------------------------------------------------
 -- Add our treesitter textobjects
 require'nvim-treesitter.configs'.setup {
+  hightlight = {
+    enable = true,
+    disable = {},
+  },
   textobjects = {
     select = {
       enable = true,

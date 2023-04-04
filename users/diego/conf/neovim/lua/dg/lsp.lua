@@ -89,7 +89,7 @@ require'lspconfig'.terraformls.setup {
 require'lspconfig'.dockerls.setup {
     on_attach = on_attach,
     filetypes = { "Dockerfile", "dockerfile", "*-Dockerfile"}
-} 
+}
 
 -- todo: install later
 
