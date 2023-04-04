@@ -52,4 +52,22 @@
 	refresh_pattern .               0       20%     4320
 	'';
 	};
+
+    networking.extraHosts = 
+    ''
+    10.223.88.73 dev-ngd-proxy
+    10.223.88.71 dev-squid-proxy
+      
+    10.223.88.138 test-ngd-proxy
+
+    10.223.88.234 impl-ngd-proxy-a
+    10.223.88.202 impl-ngd-proxy-b 
+    10.223.88.210 impl-ngd-proxy-c
+    10.223.88.230 impl-squid-proxy
+
+    10.223.89.10 prod-ngd-proxy-a
+    10.223.89.23 prod-ngd-proxy-b
+    10.223.89.40 prod-ngd-proxy-c
+    10.223.89.4 prod-squid-proxy
+    '';
 }
