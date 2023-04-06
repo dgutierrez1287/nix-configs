@@ -4,6 +4,8 @@
 	home.packages = with pkgs; [
 		# infra as code tools
 		tfenv
+
+        tree-sitter
         #awscli2
 
 		# golang

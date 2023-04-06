@@ -119,6 +119,30 @@
         "url": "https://github.com/ray-x/lsp_signature.nvim/archive/9ccee20602a10843e3ea3ebc2536dfdcc6cee9a3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "lspkind-nvim": {
+        "branch": "master",
+        "description": "vscode-like pictograms for neovim lsp completion items",
+        "homepage": "",
+        "owner": "onsails",
+        "repo": "lspkind.nvim",
+        "rev": "c68b3a003483cf382428a43035079f78474cd11e",
+        "sha256": "0qrfqajpbkb757vbcjz1g7v5rihsyhg1f1jxrbwg08dbxpw101av",
+        "type": "tarball",
+        "url": "https://github.com/onsails/lspkind.nvim/archive/c68b3a003483cf382428a43035079f78474cd11e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lspsaga-nvim": {
+        "branch": "main",
+        "description": "improve neovim lsp experience",
+        "homepage": "",
+        "owner": "glepnir",
+        "repo": "lspsaga.nvim",
+        "rev": "12536980b12fd7b74db8527b0596fe608fb1eef6",
+        "sha256": "0kkdfz61kkcn8z2spm3493mnhyy95w8l0lc6kmp87fq5203jxl6q",
+        "type": "tarball",
+        "url": "https://github.com/glepnir/lspsaga.nvim/archive/12536980b12fd7b74db8527b0596fe608fb1eef6.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lualine-nvim": {
         "branch": "master",
         "description": "A blazing fast and easy to configure neovim statusline plugin written in pure lua.",

@@ -7,6 +7,9 @@ in
 	home.file.".config/nvim/lua/dg/lsp.lua".source = ./conf/neovim/lua/dg/lsp.lua;
 	home.file.".config/nvim/lua/dg/telescope.lua".source = ./conf/neovim/lua/dg/telescope.lua;
 
+    # snippets
+    home.file.".config/nvim/lua/dg/common-snippets.lua".source = ./conf/neovim/lua/snippets/common.lua;
+
 	programs.neovim = {
 		enable = true;
 		package = pkgs.neovim-nightly; # install the neovim nightly from the overlay
@@ -47,9 +50,9 @@ in
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
 			(lib.strings.fileContents ./conf/neovim/lualine.vim)
             (lib.strings.fileContents ./conf/neovim/bufferline.vim)
-            (lib.strings.fileContents ./conf/neovim/colors.vim)
 			(lib.strings.fileContents ./conf/neovim/comment-nvim.vim)
 			(lib.strings.fileContents ./conf/neovim/vim-terraform.vim)
+            (lib.strings.fileContents ./conf/neovim/colors.vim)
 		];
 
 		# extra packages neovim needs
@@ -76,6 +79,15 @@ in
             # nixos
             rnix-lsp
 
+            # java
+            java-language-server
+
+            # diagnostic langauge server
+            nodePackages.diagnostic-languageserver
+
+            # yaml
+            nodePackages.yaml-language-server
+
             # python
             nodePackages.pyright
 
@@ -87,6 +99,7 @@ in
 			customVim.nvim-lspconfig
 			customVim.nvim-cmp
 		    customVim.lsp_signature-nvim
+            customVim.nvim-lspkind
 
             # json
             customVim.nvim-jqx
