@@ -10,6 +10,26 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
   },
+  ensure_installed = {
+    "yaml",
+    "json",
+    "bash",
+    "dockerfile",
+    "go",
+    "gomod",
+    "java",
+    "make",
+    "latex",
+    "lua",
+    "markdown",
+    "nix",
+    "python",
+    "ruby",
+    "rust",
+    "hcl",
+    "typescript",
+    "vim",
+  },
   textobjects = {
     select = {
       enable = true,
@@ -43,4 +63,8 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+-- filetype to parser mapping
+vim.filetype.add({extensions = {sh = "bash"}})
+vim.filetype.add({extensions = {tf = "hcl"}})
 EOF

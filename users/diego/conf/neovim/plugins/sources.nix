@@ -2,6 +2,12 @@ self: super:
 
 let sources = import ../../../../../nix/sources.nix; in rec {
   customVim = with self; {
+    
+    nvim-lspkind = vimUtils.buildVimPlugin {
+      name = "nvim-lspkind";
+      src = sources.lspkind-nvim;
+    };
+
     nvim-tree-lua = vimUtils.buildVimPlugin {
       name = "nvim-tree-lua";
       src = sources.nvim-tree-lua;
