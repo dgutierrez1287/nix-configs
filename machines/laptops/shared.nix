@@ -10,6 +10,8 @@
     w3m
     unzip
 
+    gnome3.gnome-tweaks
+
     home-manager
 
     nix-prefetch-github
