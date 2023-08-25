@@ -11,10 +11,10 @@
   services.nix-daemon.enable = true;
 
   # Fonts
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
-     recursive
-     (nerdfonts.override { fonts = [ "FiraCode" ]; })
-   ];
+  ##fonts.fontDir.enable = true;
+  ##fonts.fonts = with pkgs; [
+  ##   recursive
+  ##   (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ## ];
 
 }

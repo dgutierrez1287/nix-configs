@@ -7,6 +7,8 @@ require'lspkind'.init({})
 
 local nvim_lsp = require('lspconfig')
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -27,7 +29,10 @@ require 'lsp_signature'.setup({
 })
 
 -- typescript
-nvim_lsp.tsserver.setup{ on_attach=on_attach }
+nvim_lsp.tsserver.setup{ 
+    on_attach=on_attach,
+    capabilities = capabilities,
+}
 
 -- golang language
 nvim_lsp.gopls.setup{
@@ -41,26 +46,31 @@ nvim_lsp.gopls.setup{
             staticcheck = true,
         },
     },
+    capabilities = capabilities,
 }
 
 -- nix language
 nvim_lsp.rnix.setup {
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- bash language
 nvim_lsp.bashls.setup{
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- python language
 nvim_lsp.pyright.setup{
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- vim language
 nvim_lsp.vimls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- lua language
@@ -88,19 +98,22 @@ nvim_lsp.sumneko_lua.setup {
             },
         },
     },
+    capabilities = capabilities,
 }
 
 -- terraform language
 -- install --> :LspInstall terraform
 nvim_lsp.terraformls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- docker language
 -- install --> npm install -g dockerfile-language-server-nodejs
 nvim_lsp.dockerls.setup {
     on_attach = on_attach,
-    filetypes = { "Dockerfile", "dockerfile", "*-Dockerfile"}
+    filetypes = { "Dockerfile", "dockerfile", "*-Dockerfile"},
+    capabilities = capabilities,
 }
 
 -- todo: install later
