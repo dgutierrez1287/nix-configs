@@ -38,13 +38,14 @@ in
 			(lib.strings.fileContents ./conf/neovim/autopair.vim)
 			(lib.strings.fileContents ./conf/neovim/commands.vim)
 			(lib.strings.fileContents ./conf/neovim/float-term.vim)
+            # (lib.strings.fileContents ./conf/neovim/lsp.vim)
 			(lib.strings.fileContents ./conf/neovim/git.vim)
             (lib.strings.fileContents ./conf/neovim/nvim-tree.vim)
             (lib.strings.fileContents ./conf/neovim/tree-sitter.vim)
-            (lib.strings.fileContents ./conf/neovim/nvim-cmp.vim)
-            (lib.strings.fileContents ./conf/neovim/lsp.vim)
+            (lib.strings.fileContents ./conf/neovim/nvim-cmp-lsp.vim)
+            # (lib.strings.fileContents ./conf/neovim/nvim-cmp.vim)
             (lib.strings.fileContents ./conf/neovim/glow.vim)
-			(lib.strings.fileContents ./conf/neovim/luasnip.vim)
+			# (lib.strings.fileContents ./conf/neovim/luasnip.vim)
 			(lib.strings.fileContents ./conf/neovim/telescope.vim)
 			(lib.strings.fileContents ./conf/neovim/tmux-nav.vim)
 			(lib.strings.fileContents ./conf/neovim/undotree.vim)
@@ -97,6 +98,7 @@ in
 		plugins = with pkgs; [
 			# lsp
 			customVim.nvim-lspconfig
+            customVim.cmp-nvim-lsp
 			customVim.nvim-cmp
 		    customVim.lsp_signature-nvim
             customVim.nvim-lspkind
