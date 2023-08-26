@@ -20,6 +20,7 @@
 		nix-tree
 		nix-update
         gnupg
+        niv
       ] 
       ++(if os == "Linux"
       then [
