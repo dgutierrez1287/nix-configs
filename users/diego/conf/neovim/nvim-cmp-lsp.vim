@@ -19,7 +19,7 @@ sign({name = 'DiagnosticSignHint', text = '⚑'})
 sign({name = 'DiagnosticSignInfo', text = ''})
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   severity_sort = true,
   float = {
     border = 'rounded',
@@ -46,34 +46,53 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
-lsp_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local on_attach = function(client, bufnr)
+    local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+    -- Mappings
+    local opts = { noremap=true, silent=true }
+
+    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+end
 
 -- Servers
 -- nix language
-nvim_lsp.rnix.setup {
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
+lspconfig.rnix.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- python language
-nvim_lsp.pyright.setup{
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
+lspconfig.pyright.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        pyright = {
+           autoImportCompletion = true, 
+        },
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'openFilesOnly',
+
+            }
+        }
+    }
 }
 
 -- typescript
-nvim_lsp.tsserver.setup{ 
-    -- on_attach=on_attach,
-    -- capabilities = capabilities,
+lspconfig.tsserver.setup{ 
+    on_attach=on_attach,
+    capabilities = capabilities,
 }
 
 -- golang language
-nvim_lsp.gopls.setup{
-    -- on_attach = on_attach,
+lspconfig.gopls.setup{
+    on_attach = on_attach,
     cmd = {"gopls", "serve"},
     settings = {
         gopls = {
@@ -83,24 +102,24 @@ nvim_lsp.gopls.setup{
             staticcheck = true,
         },
     },
-    -- capabilities = capabilities,
+    capabilities = capabilities,
 }
 
 -- bash language
-nvim_lsp.bashls.setup{
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
+lspconfig.bashls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- vim language
-nvim_lsp.vimls.setup {
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
+lspconfig.vimls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- lua language
-nvim_lsp.sumneko_lua.setup {
-    -- on_attach = on_attach,
+lspconfig.sumneko_lua.setup {
+    on_attach = on_attach,
  --   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
         Lua = {
@@ -123,22 +142,22 @@ nvim_lsp.sumneko_lua.setup {
             },
         },
     },
-    -- capabilities = capabilities,
+    capabilities = capabilities,
 }
 
 -- terraform language
 -- install --> :LspInstall terraform
-nvim_lsp.terraformls.setup {
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
+lspconfig.terraformls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 -- docker language
 -- install --> npm install -g dockerfile-language-server-nodejs
-nvim_lsp.dockerls.setup {
+lspconfig.dockerls.setup {
     -- on_attach = on_attach,
     filetypes = { "Dockerfile", "dockerfile", "*-Dockerfile"},
-    -- capabilities = capabilities,
+    capabilities = capabilities,
 }
 
 -- todo: install later
@@ -146,16 +165,16 @@ nvim_lsp.dockerls.setup {
 -- ansible language
 
 -- diagnostic language server
-nvim_lsp.diagnosticls.setup{}
+lspconfig.diagnosticls.setup{}
 
 -- json language
 
 
 -- yaml langauge
-nvim_lsp.yamlls.setup{}
+lspconfig.yamlls.setup{}
 
 -- java language 
-nvim_lsp.java_language_server.setup{}
+lspconfig.java_language_server.setup{}
 
 -- groovy langauge
 
