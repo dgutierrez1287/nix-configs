@@ -311,6 +311,18 @@
         "url": "https://github.com/nvim-lua/popup.nvim/archive/b7404d35d5d3548a82149238289fa71f7f6de4ac.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "rust-tools-nvim": {
+        "branch": "master",
+        "description": "Tools for better development in rust using neovim's builtin lsp",
+        "homepage": "",
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "rev": "0cc8adab23117783a0292a0c8a2fbed1005dc645",
+        "sha256": "0643bwpsjqg36wqyvj7mlnlmasly7am4jjzaabkiqwlz307z5mwf",
+        "type": "tarball",
+        "url": "https://github.com/simrat39/rust-tools.nvim/archive/0cc8adab23117783a0292a0c8a2fbed1005dc645.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "telescope-fzy-native-nvim": {
         "branch": "master",
         "description": "FZY style sorter that is compiled",
