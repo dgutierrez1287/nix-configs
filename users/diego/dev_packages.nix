@@ -4,6 +4,7 @@
 	home.packages = with pkgs; [
 		# infra as code tools
 		tfenv
+        pkenv
 
         tree-sitter
         #awscli2
