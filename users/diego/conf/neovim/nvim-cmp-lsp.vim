@@ -84,6 +84,9 @@ lspconfig.pyright.setup{
     }
 }
 
+-- rust
+
+
 -- typescript
 lspconfig.tsserver.setup{ 
     on_attach=on_attach,
