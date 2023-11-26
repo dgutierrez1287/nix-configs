@@ -20,8 +20,12 @@ stdenvNoCC.mkDerivation {
   nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
-    mkdir -p $out
-    cp -r * $out
+    mkdir -p $out/bin
+    mkdir -p $out/usr/tfenv
+
+    cp -r * $out/usr/tfenv
+    ln -s $out/usr/tfenv/bin/tfenv $out/bin/tfenv
+    ln -s $out/usr/tfenv/bin/terraform $out/bin/terraform
   '';
 
   # TFENV_CONFIG_DIR is only set if not already specified.

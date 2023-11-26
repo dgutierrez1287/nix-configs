@@ -3,7 +3,7 @@
 {
 	home.packages = with pkgs; [
 		# infra as code tools
-		tfenv
+        tfenv
         pkenv
 
         tree-sitter

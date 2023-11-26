@@ -16,24 +16,35 @@ stdenvNoCC.mkDerivation {
 
   dontConfigure = true;
   dontBuild = true;
+  
 
-  nativeBuildInputs = [ ];
+  nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
-    mkdir -p $out/pkenv
-    cp -r * $out/pkenv
+    mkdir -p $out/bin
+    mkdir -p $out/usr/pkenv
+
+    cp -r * $out/usr/pkenv
+    ln -s $out/usr/pkenv/bin/pkenv $out/bin/pkenv
+    ln -s $out/usr/pkenv/bin/packer $out/bin/packer
   '';
 
   fixupPhase = ''
-    --run 'export '
-
-  # fixupPhase = ''
-  #   wrapProgram $out/pkenv/bin/pkenv \
-  #   --run 'export PKENV_CONFIG_DIR="''${PKENV_CONFIG_DIR:-$HOME/.local/pkenv}"' \
-  #   --run 'mkdir -p $PKENV_CONFIG_DIR'
-  #   wrapProgram $out/pkenv/bin/packer \
-  #   --run 'export PKENV_CONFIG_DIR="''${PKENV_CONFIG_DIR:-$HOME/.local/pkenv}"' \
-  #   --run 'mkdir -p $PKENV_CONFIG_DIR'
+    wrapProgram $out/bin/pkenv \
+    --run 'export PKENV_CONFIG_DIR="''${PKENV_CONFIG_DIR:-$HOME/.local/pkenv}"' \
+    --run 'mkdir -p $PKENV_CONFIG_DIR'
+    wrapProgram $out/bin/packer \
+    --run 'export PKENV_CONFIG_DIR="''${PKENV_CONFIG_DIR:-$HOME/.local/pkenv}"' \
+    --run 'mkdir -p $PKENV_CONFIG_DIR'
+  '';
+  
+  # postInstall = ''
+  #   export HOME=$(pwd)
+  #   mkdir -p $out/bin
+  #   ln -fs $out/pkenv/bin/pkenv $out/bin/pkenv
+  #   ln -fs $out/pkenv/bin/packer $out/bin/packer
+  #   export PKENV_CONFIG_DIR="''${TFENV_CONFIG_DIR:-$HOME/.local/pkenv}"
+  #   mkdir -p $PKENV_CONFIG_DIR
   # '';
 
   meta = with lib; {
