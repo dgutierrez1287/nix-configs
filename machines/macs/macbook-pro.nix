@@ -31,7 +31,6 @@
       "inkscape"
       "plex"
       "dash"
-      "utm"
       "dbkoda"
       "nosql-workbench"
       "vagrant"
