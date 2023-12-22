@@ -17,7 +17,9 @@ export PATH=$PATH:/etc/profiles/per-user/diego/bin
 # customizations for macos
 if [[ "$os_type" == "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin:/Users/diego/bin
+    export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin:/Users/diego/bin:/run/current-system/sw/bin
+
+    #export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixpkgs:/nix/var/nix/profiles/per-user/root/channels
 else
     export PATH=$PATH:/home/diego/bin
 fi
